@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastroCSS.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-head">
+        <img src="Imagens/LoginSfundo.png" alt="Logo">
+    <div class="menu-float">
+        <a class="form-links" id="cont-nav" href="#">Inicio</a> 
+        <a class="form-links" id="cont-nav" href="telaCadastro1.html">Cadastro</a> 
+        <a class="form-links" id="cont-nav" href="TelaLogin.html">Login</a>
+    </div>
+</div>
+    </nav>
+
+    <div class="form-p2">
+        <form method="POST">
+            <h1>Cadastro</h1>
+            <a class="form-links-ret" href="telaCadastro1.html">Retornar</a>
+            <hr><br>
+            <label class="form-labels">Data de nascimento</label><input id="menu-infos-v2" type="text"
+                placeholder="00/00/000">
+            <br>
+
+            <div class="cont-check-form">
+                <label class="form-labels">Estuda?</label>
+                <input type="radio" name="rbEstuda" id="menu-infos-v2"><label>Sim</label>
+                <input type="radio" name="rbEstuda" id="menu-infos-v2"><label>Não</label>
+            </div>
+
+            <div class="cont-check-form">
+                <label class="form-labels">Trabalha?</label>
+                <input type="radio" name="rbTrabalha" id="menu-infos-v2"><label>Sim</label>
+                <input type="radio" name="rbTrabalha" id="menu-infos-v2"><label>Não</label>
+            </div>
+
+            <div class="cont-check-form">
+                <label class="form-labels">Periodo Disponivel</label>
+                <input type="radio" name="periodo" value="manha"><label>Manhã</label>
+                <input type="radio" name="periodo" value="tarde"><label>Tarde</label>
+                <input type="radio" name="periodo" value="noite"><label>Noite</label>
+            </div>
+
+            <div class="cont-check-form">
+                <label class="form-labels">Horas disponiveis para treinar</label>
+                <select id="menu-infos-v2" name="hrDisp">
+                    <option>2</option>
+                    <option>4</option>
+                    <option>8</option>
+                </select>
+            </div>
+
+            <div>
+                <a href="telaCadastro3.html">
+                    <input id="menu-submit" type="button" value="Proximo">
+                </a>
+            </div>
+
+
+            </a>
+        </form>
+    </div>
+    <footer>
+        <div class="cont-nav">
+            <div class="nav-info">
+                <a class="form-links" href="https://www.instagram.com/gds.cristalacademy/" target="_blank">Instagram</a>
+            </div>
+            <div class="nav-info">
+                <a class="form-links" href="https://www.linkedin.com/company/cristal-academy/"
+                    target="_blank">Linkedin</a>
+            </div>
+            <div class="nav-info">
+                <a class="form-links" href="">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
