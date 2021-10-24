@@ -12,17 +12,19 @@
 <body>
     <nav>
         <div class="nav-head">
-            <img src="Imagens/LoginSfundo.png" alt="Logo">
-            <div class="menu-float">
-                <a class="form-links" id="cont-nav" href="telaCadastro1.html">Cadastro</a>
-                <a class="form-links" id="cont-nav" href="TelaLogin.html">Login</a>
-            </div>
-        </div>
+        <img src="Imagens/LoginSfundo.png" alt="Logo">
+    <div class="menu-float">
+        <a class="form-links" id="cont-nav" href="#">Inicio</a> 
+        <a class="form-links" id="cont-nav" href="telaCadastro1.html">Cadastro</a> 
+        <a class="form-links" id="cont-nav" href="TelaLogin.html">Login</a>
+    </div>
+</div>
     </nav>
 
     <div class="form-p2">
         <form method="POST">
             <h1>Cadastro</h1>
+            <a class="form-links-ret" href="telaCadastro1.html">Retornar</a>
             <hr><br>
             <label class="form-labels">Data de nascimento</label><input id="menu-infos-v2" type="text"
                 placeholder="00/00/000">
@@ -30,12 +32,14 @@
 
             <div class="cont-check-form">
                 <label class="form-labels">Estuda?</label>
-                <input type="checkbox" name="ckEstuda" id="menu-infos-v2">
+                <input type="radio" name="rbEstuda" id="menu-infos-v2"><label>Sim</label>
+                <input type="radio" name="rbEstuda" id="menu-infos-v2"><label>Não</label>
             </div>
 
             <div class="cont-check-form">
                 <label class="form-labels">Trabalha?</label>
-                <input type="checkbox" name="ckTrabalha" id="menu-infos-v2">
+                <input type="radio" name="rbTrabalha" id="menu-infos-v2"><label>Sim</label>
+                <input type="radio" name="rbTrabalha" id="menu-infos-v2"><label>Não</label>
             </div>
 
             <div class="cont-check-form">
@@ -65,7 +69,7 @@
         </form>
     </div>
     <footer>
-        <div class="cont-foot">
+        <div class="cont-nav">
             <div class="nav-info">
                 <a class="form-links" href="https://www.instagram.com/gds.cristalacademy/" target="_blank">Instagram</a>
             </div>

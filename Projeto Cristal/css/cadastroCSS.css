@@ -26,7 +26,7 @@ nav{
     padding: 0%;
     text-decoration: none;
     color: rgb(58, 57, 57);
-    margin-top: -6vh;
+    margin-top: 0vh;
 }
 #form-esq-senha:hover{
     color: #37afdf;
@@ -93,7 +93,16 @@ h1{
     transition: all 0.5s;
     font-size: 18px;
     padding-right: 50px;
-       
+    padding-top:25px;
+    font-weight: 100;
+}
+.form-links-ret{
+    text-decoration: none;
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: all 0.5s;
+    font-size: 18px;
+    padding-right: 50px;
     padding-top:25px;
     font-weight: 100;
 }
