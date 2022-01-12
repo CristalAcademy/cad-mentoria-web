@@ -1,0 +1,8 @@
+<p class="term"
+  (mouseover)="alteraPosicaoDaTooltip($event.x, $event.y); exibeTooltip()"
+  (mouseleave)="escondeTooltip()">Esqueci minha senha</p>
+
+  <div [class.visible]="visible" class="tooltip"
+  [style.left.px]="mouse.x" [style.top.px]="mouse.y">
+  <p>Estamos encontrando dificuldades para entender </p>
+</div>

@@ -1,1 +1,11 @@
-<p>acesso works!</p>
+<mat-card>
+  <mat-card-header>
+    <button mat-button (click)="login()">Login</button>
+    <button mat-button (click)="cadastro()">Cadastro</button>
+  </mat-card-header>
+  <mat-card-content >
+    <app-login *ngIf="log"></app-login>
+    <app-cadastro *ngIf="!log"></app-cadastro>
+  </mat-card-content>
+</mat-card>
+
