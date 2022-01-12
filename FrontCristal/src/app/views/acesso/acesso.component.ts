@@ -3,13 +3,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-acesso',
   templateUrl: './acesso.component.html',
-  styleUrls: ['./acesso.component.scss']
+  styleUrls: ['./acesso.component.scss'],
 })
 export class AcessoComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  log = false;
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  cadastro() {
+    this.log = false;
   }
-
+  login() {
+    this.log = true;
+  }
 }
