@@ -1,3 +1,11 @@
+.mat-card {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 50%;
+  }
+}
 section {
   height: 100vh;
   background-color: #999693;

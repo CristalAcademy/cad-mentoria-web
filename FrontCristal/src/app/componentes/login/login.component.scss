@@ -1,0 +1,82 @@
+mat-card {
+  mat-card-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    background-color: #050035;
+    padding: 50px 60px;
+    border-radius: 20px;
+    align-items: center;
+    animation: 0.6s show forwards;
+    box-shadow: 1px 8px 16px 0px rgba(53, 53, 53, 0.712);
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: white;
+  }
+  input {
+    background-color: transparent;
+    margin: 15px 10px;
+    padding: 10px 30px 10px 5px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 8px;
+  }
+  input:hover {
+    background: #dddddd80;
+    border-radius: 8px;
+  }
+  input:focus {
+    outline: none;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+  }
+  input::placeholder {
+    color: #ffffff;
+  }
+  p {
+    text-align: center;
+    margin: 10px 0px;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    color: #18022c;
+    padding: px 5px;
+    color: white;
+  }
+  a:hover {
+    color: #e05928;
+  }
+  button {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    padding: 5px 30px;
+    background-color: #e05928;
+    color: rgb(0, 0, 0);
+  }
+  img {
+    max-width: 130px;
+    margin-bottom: 20px;
+  }
+}
