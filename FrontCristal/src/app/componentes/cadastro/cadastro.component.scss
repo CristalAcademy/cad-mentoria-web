@@ -3,8 +3,11 @@ mat-card {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40vw;
+  width: 400px;
   background-color: rgb(206, 126, 21);
 
- 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }
