@@ -12,6 +12,7 @@ import { AcessoComponent } from './views/acesso/acesso.component';
 import { TooltipComponent } from './componentes/tooltip/tooltip.component';
 import { CadastroComplementarComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
 import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
+import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastr
     TooltipComponent,
     CadastroComplementarComponent,
     CadastroCandidatoSocialComponent,
+    StatusCandidaturaComponent,
   ],
   imports: [
     BrowserModule,

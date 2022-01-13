@@ -1,0 +1,26 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  background-color: #000000aa;
+  padding: 50px 60px;
+  border-radius: 20px;
+  animation: 0.6s show forwards;
+  box-shadow: 1px 8px 16px 0px rgba(53, 53, 53, 0.712);
+  mat-card-title {
+    height: 80px;
+    font-size: 75px;
+    color: darkorange;
+  }
+  mat-card-subtitle {
+    height: 40px;
+    font-size: 35px;
+    color: darkorange;
+  }
+
+  mat-card-content {
+    font-size: 22px;
+    color: gainsboro;
+  }
+}
