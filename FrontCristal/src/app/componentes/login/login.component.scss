@@ -1,4 +1,9 @@
+* {
+  color: white;
+}
 mat-card {
+  background-color: transparent;
+
   mat-card-content {
     display: flex;
     justify-content: space-around;
@@ -43,12 +48,12 @@ mat-card {
     border-radius: 8px;
   }
   input:hover {
-    background: #dddddd80;
+    background: #dddddd5d;
     border-radius: 8px;
   }
   input:focus {
     outline: none;
-    border: 1px solid #ffffff;
+    border: 1px solid #f1f1f1e8;
     border-radius: 8px;
   }
   input::placeholder {
@@ -78,5 +83,8 @@ mat-card {
   img {
     max-width: 130px;
     margin-bottom: 20px;
+  }
+  span {
+    color: red;
   }
 }

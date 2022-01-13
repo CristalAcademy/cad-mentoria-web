@@ -3,11 +3,11 @@
     <div class="content">
       <img src="../../../assets/img/loginCristal.svg" alt="Login">
       <h1>Entrar</h1>
-      <input type="email" name="nome" id="email" placeholder="E-mail">
-      <input type="password" name="senha" id="senha" placeholder="Password">
+      <input type="email" name="email" id="email" placeholder="E-mail">
+      <input type="password" [(ngModel)]="senha" name="senha" id="senha" placeholder="Password" value="123">
+      <span *ngIf="senhaErrada">*minimos de 8 caracteres para a senha*</span>
       <p>Esqueceu sua senha?<a href="#"> Click aqui!</a></p>
-      <button mat-raised-button>Entrar</button>
+      <button mat-raised-button (click)="verificarSenha()">Entrar</button>
     </div>
   </mat-card-content>
-
 </mat-card>
