@@ -1,10 +1,31 @@
 :root {
   --cor-orange-1: #e05928;
   --cor-azul-1: #050035;
+  --cristal-color: #02021c;
+  --transparent-black-lv-1: #00000077;
+  --transparent-black-lv-2: #000000aa;
+  --transparent-white-lv-1: #dddddd5d;
 }
+
 .orange-1 {
   color: var(--cor-orange-1);
 }
+
 .azul-1 {
   color: var(--cor-azul-1);
+}
+
+.cristal-color {
+  color: var(--cristal-color);
+}
+
+.transparent-black-lv-1 {
+  color: var(--transparent-black-lv-1);
+}
+
+.transparent-black-lv-2 {
+  color: var(--transparent-black-lv-2);
+}
+.transparent-white-lv-1 {
+  color: var(--transparent-white-lv-1);
 }

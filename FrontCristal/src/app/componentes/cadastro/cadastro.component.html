@@ -1,51 +1,81 @@
 <mat-card>
   <mat-card-content>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input
+          formControlName="nome"
+          matInput
+          placeholder="Ex: Marcia Santos"
+          name="nome"
+          maxlength="100"
+          #nome
+          required
+        /><mat-error *ngIf="this.form.get('nome')">{{getErrorMessage("nome")}}</mat-error>
+        <mat-hint align="end">{{ nome.value.length }} / 100</mat-hint>
+      </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input
-            matInput
-            placeholder="Ex: Marcia Santos"
-            name="nome"
-            required
-          />
-        </mat-form-field>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input
+          formControlName="email"
+          matInput
+          type="email"
+          placeholder="Ex. e@cristal.com"
+          name="email"
+          required
+        />
+        <mat-error *ngIf="this.form.get('email')">{{getErrorMessage("email")}}</mat-error>
+      </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>E-mail</mat-label>
-          <input
-            matInput
-            type="email"
-            placeholder="Ex. e@cristal.com"
-            name="email"
-            required
-          />
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Senha</mat-label>
-          <input
-            matInput
-            [type]="hide ? 'password' : 'text'"
-            name="senha"
-            required
-          />
-        </mat-form-field>
-
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input
+          formControlName="password"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          name="senha"
+          maxlength="100"
+          #senha
+          required
+        />
+        <mat-error *ngIf="this.form.get('password')">{{getErrorMessage("password")}}</mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint align="end">{{ senha.value.length }} / 16</mat-hint>
+      </mat-form-field>
 
       <mat-form-field>
         <mat-label>Confirme a senha</mat-label>
         <input
+          formControlName="passwordC"
           matInput
           [type]="hide ? 'password' : 'text'"
           name="confirmarSenha"
+          maxlength="100"
+          #senhaC
           required
         />
+        <mat-error *ngIf="this.form.get('passwordC')">{{getErrorMessage("passwordC")}}</mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint align="end">{{ senhaC.value.length }} / 16</mat-hint>
       </mat-form-field>
+      <button mat-button type="submit" [disabled]="form.invalid" >Gravar</button>
     </form>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button type="submit">Iniciar</button>
-  </mat-card-actions>
 </mat-card>
