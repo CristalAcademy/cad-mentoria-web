@@ -45,16 +45,17 @@ mat-card {
     border-right: none;
     cursor: pointer;
     transition: 0.2s;
-    border-radius: 8px;
   }
+  .mat-form-field-underline {
+    background-color: white;
+  }
+
   input:hover {
     background: #dddddd5d;
-    border-radius: 8px;
   }
   input:focus {
     outline: none;
     border: 1px solid #ffffff;
-    border-radius: 8px;
   }
   input::placeholder {
     color: #ffffff;
@@ -88,9 +89,9 @@ mat-card {
     color: red;
   }
 }
-::ng-deep .mat-card:not([class*=mat-elevation-z]){
+::ng-deep .mat-card:not([class*="mat-elevation-z"]) {
   box-shadow: none;
 }
-::ng-deep .mat-card{
+::ng-deep .mat-card {
   background-color: transparent;
 }
