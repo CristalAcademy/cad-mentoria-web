@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AcessoComponent implements OnInit {
   constructor() {}
 
-  log = false;
+  log = true;
 
   ngOnInit(): void {}
 
