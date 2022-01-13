@@ -1,40 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { FormControl, NgForm, Validators, FormGroup } from '@angular/forms';
+import {
+  Validators,
+  FormGroup,
+  FormBuilder,
+  FormControl,
+} from '@angular/forms';
 import { CadastroCandidatoService } from 'src/app/services/cadastro-candidato.service';
-
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  styleUrls: ['./cadastro.component.scss'],
 })
-export class CadastroComponent implements OnInit  {
+export class CadastroComponent implements OnInit {
+  f = FormControl;
   constructor(private formBd: FormBuilder) {}
 
   form!: FormGroup;
 
-  public hide : boolean = true;
+  public hide: boolean = true;
 
   ngOnInit() {
     this.form = this.formBd.group({
-      nome : this.formBd.control('', [Validators.required]),
-      email : this.formBd.control('', [Validators.required, Validators.email]),
-      password: this.formBd.control('', [Validators.required]),
-      passwordC : this.formBd.control('', [Validators.required])
-    })
-
-    this.form.valueChanges.subscribe(change => {
-      console.log(change)
-    })
-
+      nome: this.formBd.control('', [Validators.required]),
+      email: this.formBd.control('', [Validators.required, Validators.email]),
+      password: this.formBd.control('', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
+      passwordC: this.formBd.control('', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
+    });
   }
+  getErrorMessage(prop: string) {
 
-  onSubmit(form: NgForm) {
+    if (this.element(prop)!.hasError('required')) {
+      return 'Campo não pode ser vazio';
+    }else  if (this.element(prop)!.hasError('email')) {
+      return 'Email não está válido';
+    }
+    return 'Senha deve ter ao menos de 8 caracteres';
+  }
+  onSubmit() {
 
-    let candidato = new CadastroCandidatoService(form.value.nome,form.value.email,form.value.senha,form.value.confirmarSenha);
-
+    let candidato = new CadastroCandidatoService(
+      this.form.value.nome,
+      this.form.value.email,
+      this.form.value.password,
+      this.form.value.passwordC
+    );
     console.log(candidato);
   }
-
+  element(key : string) {
+    return this.form.get(key);
+  }
 }

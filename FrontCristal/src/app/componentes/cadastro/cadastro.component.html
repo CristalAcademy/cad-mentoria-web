@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-    <form *ngIf="form" [formGroup]="form">
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <mat-form-field>
         <mat-label>Nome</mat-label>
         <input
@@ -8,8 +8,11 @@
           matInput
           placeholder="Ex: Marcia Santos"
           name="nome"
+          maxlength="100"
+          #nome
           required
-        />
+        /><mat-error *ngIf="this.form.get('nome')">{{getErrorMessage("nome")}}</mat-error>
+        <mat-hint align="end">{{ nome.value.length }} / 100</mat-hint>
       </mat-form-field>
 
       <mat-form-field>
@@ -22,6 +25,7 @@
           name="email"
           required
         />
+        <mat-error *ngIf="this.form.get('email')">{{getErrorMessage("email")}}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -31,11 +35,21 @@
           matInput
           [type]="hide ? 'password' : 'text'"
           name="senha"
+          maxlength="100"
+          #senha
           required
         />
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="this.form.get('password')">{{getErrorMessage("password")}}</mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
+        <mat-hint align="end">{{ senha.value.length }} / 16</mat-hint>
       </mat-form-field>
 
       <mat-form-field>
@@ -45,13 +59,23 @@
           matInput
           [type]="hide ? 'password' : 'text'"
           name="confirmarSenha"
+          maxlength="100"
+          #senhaC
           required
         />
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="this.form.get('passwordC')">{{getErrorMessage("passwordC")}}</mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
+        <mat-hint align="end">{{ senhaC.value.length }} / 16</mat-hint>
       </mat-form-field>
-      <button mat-button type="submit">Iniciar</button>
+      <button mat-button type="submit" [disabled]="form.invalid" >Gravar</button>
     </form>
   </mat-card-content>
 </mat-card>

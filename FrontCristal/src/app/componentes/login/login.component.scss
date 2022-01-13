@@ -7,7 +7,7 @@ mat-card {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    background-color: #050035;
+    background-color: #000000aa;
     padding: 50px 60px;
     border-radius: 20px;
     align-items: center;
@@ -79,4 +79,10 @@ mat-card {
     max-width: 130px;
     margin-bottom: 20px;
   }
+}
+::ng-deep .mat-card:not([class*=mat-elevation-z]){
+  box-shadow: none;
+}
+::ng-deep .mat-card{
+  background-color: transparent;
 }

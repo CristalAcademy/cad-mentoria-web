@@ -4,10 +4,20 @@ mat-card {
   justify-content: center;
   align-items: center;
   width: 400px;
-  background-color: rgb(206, 126, 21);
+  background-color: #000000aa;
 
   form {
     display: flex;
     flex-direction: column;
+    .mat-form-field{
+      color:white;
+    }
+    .mat-button{
+      background-color: #000000aa;
+    }
   }
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0;
 }

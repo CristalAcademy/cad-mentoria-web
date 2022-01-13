@@ -4,4 +4,14 @@
   justify-content: center;
   align-items: center;
   background-color: #00000077;
+  min-width: 450px;
+
+
+  .mat-card-header {
+    width: 100%;
+
+    .mat-button{
+      width: 50%;
+    }
+  }
 }
