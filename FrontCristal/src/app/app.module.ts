@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Material } from '../assets/module/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +10,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { AcessoComponent } from './views/acesso/acesso.component';
 import { TooltipComponent } from './componentes/tooltip/tooltip.component';
+import { CadastroComplementarComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
+import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
     CadastroComponent,
     AcessoComponent,
     TooltipComponent,
+    CadastroComplementarComponent,
+    CadastroCandidatoSocialComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,5 +34,6 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

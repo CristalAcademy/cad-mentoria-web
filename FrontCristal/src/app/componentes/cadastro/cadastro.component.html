@@ -11,7 +11,9 @@
           maxlength="100"
           #nome
           required
-        /><mat-error *ngIf="this.form.get('nome')">{{getErrorMessage("nome")}}</mat-error>
+        /><mat-error *ngIf="this.form.get('nome')">{{
+          getErrorMessage("nome")
+        }}</mat-error>
         <mat-hint align="end">{{ nome.value.length }} / 100</mat-hint>
       </mat-form-field>
 
@@ -25,7 +27,9 @@
           name="email"
           required
         />
-        <mat-error *ngIf="this.form.get('email')">{{getErrorMessage("email")}}</mat-error>
+        <mat-error *ngIf="this.form.get('email')">{{
+          getErrorMessage("email")
+        }}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -39,7 +43,9 @@
           #senha
           required
         />
-        <mat-error *ngIf="this.form.get('password')">{{getErrorMessage("password")}}</mat-error>
+        <mat-error *ngIf="this.form.get('password')">{{
+          getErrorMessage("password")
+        }}</mat-error>
         <button
           mat-icon-button
           matSuffix
@@ -63,7 +69,9 @@
           #senhaC
           required
         />
-        <mat-error *ngIf="this.form.get('passwordC')">{{getErrorMessage("passwordC")}}</mat-error>
+        <mat-error *ngIf="this.form.get('passwordC')">{{
+          getErrorMessage("passwordC")
+        }}</mat-error>
         <button
           mat-icon-button
           matSuffix
@@ -75,7 +83,9 @@
         </button>
         <mat-hint align="end">{{ senhaC.value.length }} / 16</mat-hint>
       </mat-form-field>
-      <button mat-button type="submit" [disabled]="form.invalid" >Gravar</button>
+      <button mat-button type="submit" [disabled]="form.invalid">
+        Continuar
+      </button>
     </form>
   </mat-card-content>
 </mat-card>

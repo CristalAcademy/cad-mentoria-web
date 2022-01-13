@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Data Nascimento</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-slide-toggle>Estuda?</mat-slide-toggle>
+
+      <mat-slide-toggle>Estuda</mat-slide-toggle>
+
+      <mat-slide-toggle>Conhece progamação?</mat-slide-toggle>
+
+      <mat-form-field>
+        <mat-label>Periodo disponível </mat-label>
+        <mat-select>
+          <mat-option value="one">Manhã</mat-option>
+          <mat-option value="two">Tarde</mat-option>
+          <mat-option value="tree">Noite</mat-option>
+          <mat-option value="four">Indiferente</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      Horas disponíveis para treinar
+      <mat-slider max="8" min="2" step="2" thumbLabel="true" vertical="false"></mat-slider>
+
+      <button mat-raised-button color="primary" type="submit">Proximo</button>
+    </form>
+  </mat-card-content>
+</mat-card>
