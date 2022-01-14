@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     }else  if (this.element(prop)!.hasError('email')) {
       return 'Email não está válido';
     }
-    return 'Senha deve ter ao menos de 8 caracteres';
+    return 'Senha deve ter ao menos 8 caracteres';
   }
   element(key : string) {
     return this.form.get(key);
