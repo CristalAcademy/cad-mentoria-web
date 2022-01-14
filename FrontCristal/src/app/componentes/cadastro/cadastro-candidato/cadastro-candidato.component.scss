@@ -14,10 +14,14 @@ mat-card {
     align-items: center;
     animation: 0.6s show forwards;
     box-shadow: 1px 8px 16px 0px rgba(53, 53, 53, 0.712);
-    
+
     form {
       display: flex;
       flex-direction: column;
     }
+  }
+  mat-label {
+    color: white;
+    font-size: 1rem;
   }
 }
