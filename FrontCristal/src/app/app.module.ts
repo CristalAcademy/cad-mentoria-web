@@ -13,7 +13,7 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
 import { CadastroComplementarComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
 import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
 import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
-import { EsqueciMinhaSenhaComponent } from './componentes/login/esqueci-minha-senha/esqueci-minha-senha.component';
+import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/esqueci-minha-senha.component';
 
 
 @NgModule({

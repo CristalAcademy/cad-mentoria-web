@@ -21,7 +21,35 @@ mat-card {
     }
   }
 }
-
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  .mat-form-field {
+    color: white;
+  }
+  .mat-raised-button {
+    background-color: #e05928;
+    color: black;
+    font-size: 1.3rem;
+    margin: 25px auto 0px auto;
+    padding: 5px 20px;
+    max-width: 130px;
+    justify-content: center;
+  }
+  .mat-form-field-underline {
+    background-color: white;
+  }
+}
 
 ::ng-deep .mat-card-header-text {
   margin: 0;
