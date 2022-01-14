@@ -1,13 +1,61 @@
 <mat-card>
-  <mat-card-content>
-    <div class="content">
-      <img src="../../../assets/img/loginCristal.svg" alt="Login">
+  <mat-card-content class="content">
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <img src="../../../assets/img/loginCristal.svg" alt="Login" />
       <h1>Entrar</h1>
-      <input type="email" name="email" id="email" placeholder="E-mail">
-      <input type="password" [(ngModel)]="senha" name="senha" id="senha" placeholder="Password" value="123">
+
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input
+          formControlName="email"
+          matInput
+          type="email"
+          placeholder="Ex. e@cristal.com"
+          name="email"
+          required
+        />
+        <mat-error *ngIf="this.form.get('email')">{{
+          getErrorMessage("email")
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input
+          formControlName="password"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          name="senha"
+          maxlength="100"
+          #senha
+          required
+        />
+        <mat-error *ngIf="this.form.get('password')">{{
+          getErrorMessage("password")
+        }}</mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint align="end">{{ senha.value.length }} / 16</mat-hint>
+      </mat-form-field>
+      
       <span *ngIf="senhaErrada">*minimos de 8 caracteres para a senha*</span>
       <p>Esqueceu sua senha?<a href="#"> Click aqui!</a></p>
-      <button mat-raised-button (click)="verificarSenha()">Entrar</button>
-    </div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Entrar
+      </button>
+    </form>
   </mat-card-content>
 </mat-card>
