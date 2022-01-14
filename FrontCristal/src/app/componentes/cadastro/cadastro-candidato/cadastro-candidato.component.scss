@@ -3,6 +3,21 @@ mat-card {
   flex-direction: column;
   background-color: transparent;
 
+  mat-datepicker-toggle.mat-datepicker-toggle-active {
+    color: #e05928;
+  }
+  mat-datepicker-toggle {
+    color: white;
+  }
+
+  mat-form-fild {
+    mat-select,
+    .mat-select-value,
+    .mat-select-value-text {
+      color: white;
+    }
+  }
+
   mat-card-content {
     display: flex;
     justify-content: space-around;
@@ -18,10 +33,46 @@ mat-card {
     form {
       display: flex;
       flex-direction: column;
+      color: white;
+    }
+    input {
+      color: #e05928;
+    }
+    label {
+      font-size: 0.9rem;
+      color: white;
+      margin: 15px 0px 5px 0px;
     }
   }
+
   mat-label {
     color: white;
     font-size: 1rem;
   }
+}
+::ng-deep .mat-radio-outer-circle {
+  border-color: white;
+  border-radius: 40%;
+}
+mat-radio-button {
+  margin: 15px 5px;
+}
+::ng-deep.mat-radio-label-content {
+  color: white;
+}
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #ff5722;
+}
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #ff5722;
+}
+
+::ng-deep .mat-select-value {
+  color: #ff5722 !important;
 }

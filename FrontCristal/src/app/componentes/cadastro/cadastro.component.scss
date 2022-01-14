@@ -65,10 +65,16 @@ form {
   margin: 0;
 }
 ::ng-deep .mat-form-field-appearance-legacy .mat-hint {
-  color: white;
+  color: rgb(253, 141, 141);
 }
 img {
   width: 80px;
   margin: 0px auto;
   margin-bottom: 15px;
+}
+
+.picker-icon .mat-icon-button,
+.mat-datepicker-toggle,
+mat-datepicker-toggle {
+  color: white !important;
 }
