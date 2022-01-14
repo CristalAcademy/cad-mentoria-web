@@ -21,9 +21,14 @@ mat-card {
     }
   }
 }
+
 input::placeholder,
-mat-label {
+mat-label,
+h1 {
   color: white;
+}
+h1 {
+  text-align: center;
 }
 
 @keyframes show {
@@ -61,4 +66,9 @@ form {
 }
 ::ng-deep .mat-form-field-appearance-legacy .mat-hint {
   color: white;
+}
+img {
+  width: 80px;
+  margin: 0px auto;
+  margin-bottom: 15px;
 }
