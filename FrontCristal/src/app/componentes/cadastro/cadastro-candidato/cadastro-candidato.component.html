@@ -8,11 +8,24 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <mat-slide-toggle>Estuda?</mat-slide-toggle>
 
-      <mat-slide-toggle>Estuda</mat-slide-toggle>
+      <label id="estuda">Estuda?</label>
+      <mat-radio-group aria-label="Estuda">
+        <mat-radio-button value="1">Sim</mat-radio-button>
+        <mat-radio-button value="2">Não</mat-radio-button>
+      </mat-radio-group>
 
-      <mat-slide-toggle>Conhece progamação?</mat-slide-toggle>
+      <label id="trabalha">Trabalha?</label>
+      <mat-radio-group aria-label="Trabalha">
+        <mat-radio-button value="1">Sim</mat-radio-button>
+        <mat-radio-button value="2">Não</mat-radio-button>
+      </mat-radio-group>
+
+      <label id="conhece">Conhece progamação?</label>
+      <mat-radio-group aria-label="Conhece progamação">
+        <mat-radio-button value="1">Sim</mat-radio-button>
+        <mat-radio-button value="2">Não</mat-radio-button>
+      </mat-radio-group>
 
       <mat-form-field>
         <mat-label>Periodo disponível </mat-label>
