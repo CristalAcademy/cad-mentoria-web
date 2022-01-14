@@ -14,14 +14,6 @@ export class StatusCandidaturaComponent implements OnInit {
   options=['Sair', 'Continuar'];
 
   acao(opt:string){
-    if(opt=='Sair') {
-     return '';
-    }else
-    if(opt == 'Continuar') {
-      return ''
-    }else if(opt=='Cancelar inscrição'){
-      return ''
-    }
     return ''
   }
 

@@ -13,6 +13,7 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
 import { CadastroComplementarComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
 import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
 import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
+import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/esqueci-minha-senha.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { StatusCandidaturaComponent } from './componentes/status-candidatura/sta
     CadastroComplementarComponent,
     CadastroCandidatoSocialComponent,
     StatusCandidaturaComponent,
+    EsqueciMinhaSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,6 @@ import { StatusCandidaturaComponent } from './componentes/status-candidatura/sta
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: []
 })
 export class AppModule {}
