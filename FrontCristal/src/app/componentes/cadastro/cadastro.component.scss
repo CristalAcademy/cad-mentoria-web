@@ -21,13 +21,16 @@ mat-card {
     }
   }
 }
-
+input {
+  margin: 15px 10px;
+  color: #e05928;
+}
 input::placeholder,
-mat-label,
-h1 {
+mat-label {
   color: white;
 }
 h1 {
+  color: white;
   text-align: center;
 }
 
@@ -48,8 +51,6 @@ form {
     color: white;
   }
   .mat-raised-button {
-    background-color: #e05928;
-    color: black;
     font-size: 1.3rem;
     margin: 25px auto 0px auto;
     padding: 5px 20px;
@@ -65,7 +66,7 @@ form {
   margin: 0;
 }
 ::ng-deep .mat-form-field-appearance-legacy .mat-hint {
-  color: rgb(253, 141, 141);
+  color: white;
 }
 img {
   width: 80px;

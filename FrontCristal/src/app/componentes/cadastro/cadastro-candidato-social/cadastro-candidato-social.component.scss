@@ -17,12 +17,23 @@ mat-card {
     form {
       display: flex;
       flex-direction: column;
-      div{
+      div {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-
       }
     }
   }
+}
+img {
+  width: 80px;
+  margin: 0px auto;
+  margin-bottom: 15px;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+input {
+  color: white;
 }

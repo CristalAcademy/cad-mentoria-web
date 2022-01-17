@@ -2,7 +2,7 @@ mat-card {
   display: flex;
   flex-direction: column;
   background-color: transparent;
-  mat-card-content {
+  mat-card-content.mat-login {
     display: flex;
     justify-content: space-around;
     flex-direction: column;

@@ -76,3 +76,19 @@ mat-radio-button {
 ::ng-deep .mat-select-value {
   color: #ff5722 !important;
 }
+mat-slider {
+  margin-top: 20px;
+}
+::ng-deep.mat-accent .mat-slider-track-fill,
+.mat-accent .mat-slider-thumb,
+.mat-accent .mat-slider-thumb-label {
+  background-color: #e05928;
+}
+img {
+  width: 80px;
+  margin: 0px auto;
+  margin-bottom: 15px;
+}
+h1 {
+  text-align: center;
+}

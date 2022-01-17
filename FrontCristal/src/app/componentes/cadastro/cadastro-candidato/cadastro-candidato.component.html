@@ -1,6 +1,8 @@
 <mat-card>
   <mat-card-content>
     <form>
+      <img src="../../../assets/img/cadastroCristal.svg" alt="Login" />
+      <h1>Cadastrar</h1>
       <mat-form-field>
         <mat-label>Data Nascimento</mat-label>
         <input matInput [matDatepicker]="picker" />
@@ -39,7 +41,7 @@
         </mat-select>
       </mat-form-field>
 
-      Horas disponíveis para treinar
+      Horas disponíveis para treinar:
       <mat-slider max="8" min="2" step="2" thumbLabel="true" vertical="false"></mat-slider>
 
       <button mat-raised-button color="primary" type="submit">Proximo</button>
