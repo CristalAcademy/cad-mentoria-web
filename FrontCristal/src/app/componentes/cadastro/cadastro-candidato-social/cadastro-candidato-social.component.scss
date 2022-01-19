@@ -7,7 +7,7 @@ mat-card {
     justify-content: space-around;
     flex-direction: column;
     justify-items: center;
-    background-color: #000000aa;
+    background-color: #000000de;
     padding: 50px 60px;
     border-radius: 20px;
     align-items: center;
@@ -25,6 +25,12 @@ mat-card {
     }
   }
 }
+mat-datepicker-toggle {
+  color: white;
+}
+mat-datepicker-toggle.mat-datepicker-toggle-active {
+  color: #e05928;
+}
 img {
   width: 80px;
   margin: 0px auto;
@@ -34,6 +40,17 @@ h1 {
   color: white;
   text-align: center;
 }
-input {
+mat-label,
+input::placeholder {
   color: white;
+}
+input {
+  color: #e05928;
+}
+::ng-deep .mat-select-value {
+  color: #e05928;
+}
+textarea.mat-input-element {
+  color: #e05928;
+  margin: 20px 0px 0px 0px;
 }
