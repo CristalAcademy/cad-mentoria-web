@@ -5,7 +5,6 @@ import {
   FormBuilder,
   FormControl,
 } from '@angular/forms';
-import { CadastroCandidatoService } from 'src/app/services/cadastro-candidato.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -39,13 +38,6 @@ export class CadastroComponent implements OnInit {
   }
   onSubmit() {
 
-    let candidato = new CadastroCandidatoService(
-      this.form.value.nome,
-      this.form.value.email,
-      this.form.value.password,
-      this.form.value.passwordC
-    );
-    console.log(candidato);
   }
   element(key : string) {
     return this.form.get(key);

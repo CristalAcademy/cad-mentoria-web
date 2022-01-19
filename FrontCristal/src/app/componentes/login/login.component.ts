@@ -1,3 +1,5 @@
+import { SnackbarComponent } from './../snackbar/snackbar.component';
+import { LoginModel } from './../../Model/Login.model';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -6,6 +8,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +19,15 @@ export class LoginComponent implements OnInit {
   senha!: string;
   senhaErrada: boolean = false;
   f = FormControl;
-  constructor(private formBd: FormBuilder) {}
+  constructor(
+    private formBd: FormBuilder,
+    private loginService: LoginService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   form!: FormGroup;
+
+  fmsg: string = 'Test';
 
   public hide: boolean = true;
 
@@ -36,24 +45,30 @@ export class LoginComponent implements OnInit {
     this.senhaErrada = this.senha.length < 8;
   }
   onSubmit() {
-    let login = new LoginService(
-      this.form.value.email,
-      this.form.value.password
-    );
+    let login = new LoginModel(this.form.value.email, this.form.value.password);
 
-    console.log(login);
+    this.loginService.logar(login);
   }
 
-  getErrorMessage(prop: string) {
-
+  getErrorMessage(prop: string): string {
     if (this.element(prop)!.hasError('required')) {
       return 'Campo não pode ser vazio';
-    }else  if (this.element(prop)!.hasError('email')) {
+    } else if (this.element(prop)!.hasError('email')) {
       return 'Email não está válido';
+    } else {
+      return 'Senha deve ter ao menos 8 caracteres';
     }
-    return 'Senha deve ter ao menos 8 caracteres';
   }
-  element(key : string) {
+  element(key: string) {
     return this.form.get(key);
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      duration: 23000,
+      data: {
+        msg: 'textinhoooooooo',
+      },
+    });
   }
 }

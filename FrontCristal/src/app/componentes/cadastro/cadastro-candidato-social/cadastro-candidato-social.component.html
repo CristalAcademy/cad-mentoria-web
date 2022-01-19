@@ -1,11 +1,11 @@
 <mat-card>
   <mat-card-content>
-    <form>
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <img src="../../../assets/img/cadastroCristal.svg" alt="Login" />
       <h1>Cadastrar</h1>
       <mat-form-field>
         <mat-label>Classe social</mat-label>
-        <mat-select>
+        <mat-select formControlName="classe" required>
           <mat-option value="one">Baixa</mat-option>
           <mat-option value="two">Baixa/Média</mat-option>
           <mat-option value="tree">Média</mat-option>
@@ -13,20 +13,20 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field>
         <mat-label>Por que você <br> precisa de mentoria?</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput formControlName="razao" required></textarea>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Agende um bate-papo</mat-label>
-        <input matInput [matDatepicker]="picker" />
+        <input matInput [min]="minDate" [max]="maxDate" formControlName="agendar" [matDatepicker]="picker" required/>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <div>
         <button mat-raised-button color="primary" type="">Pular</button>
-        <button mat-raised-button color="primary" type="submit">Proximo</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Proximo</button>
       </div>
     </form>
   </mat-card-content>

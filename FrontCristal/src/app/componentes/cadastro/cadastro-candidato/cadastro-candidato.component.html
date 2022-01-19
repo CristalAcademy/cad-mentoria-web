@@ -1,39 +1,51 @@
 <mat-card>
   <mat-card-content>
-    <form>
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <img src="../../../assets/img/cadastroCristal.svg" alt="Login" />
       <h1>Cadastrar</h1>
+
       <mat-form-field>
         <mat-label>Data Nascimento</mat-label>
-        <input matInput [matDatepicker]="picker" />
-        <mat-datepicker-toggle class="picker-icon" matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker color="primary" #picker>
-
-        </mat-datepicker>
+        <input
+          matInput
+          formControlName="data"
+          [min]="minDate"
+          [max]="maxDate"
+          [matDatepicker]="dp3"
+          [disabled]="true"
+        />
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker color="primary" #dp3 disabled="false"></mat-datepicker>
       </mat-form-field>
 
-
       <label id="estuda">Estuda?</label>
-      <mat-radio-group aria-label="Estuda">
+      <mat-radio-group formControlName="estuda" aria-label="Estuda">
         <mat-radio-button value="1">Sim</mat-radio-button>
         <mat-radio-button value="2">Não</mat-radio-button>
       </mat-radio-group>
 
       <label id="trabalha">Trabalha?</label>
-      <mat-radio-group aria-label="Trabalha">
+      <mat-radio-group formControlName="trabalha" aria-label="Trabalha">
         <mat-radio-button value="1">Sim</mat-radio-button>
         <mat-radio-button value="2">Não</mat-radio-button>
       </mat-radio-group>
 
       <label id="conhece">Conhece progamação?</label>
-      <mat-radio-group aria-label="Conhece progamação">
+      <mat-radio-group
+        formControlName="conhece"
+        aria-label="Conhece progamação"
+      >
         <mat-radio-button value="1">Sim</mat-radio-button>
         <mat-radio-button value="2">Não</mat-radio-button>
       </mat-radio-group>
 
       <mat-form-field>
         <mat-label>Periodo disponível </mat-label>
-        <mat-select color="#e05928" class="value-select">
+        <mat-select
+          color="#e05928"
+          class="value-select"
+          formControlName="periodo"
+        >
           <mat-option value="one">Manhã</mat-option>
           <mat-option value="two">Tarde</mat-option>
           <mat-option value="tree">Noite</mat-option>
@@ -42,9 +54,23 @@
       </mat-form-field>
 
       Horas disponíveis para treinar:
-      <mat-slider max="8" min="2" step="2" thumbLabel="true" vertical="false"></mat-slider>
+      <mat-slider
+        max="8"
+        min="2"
+        step="2"
+        thumbLabel="true"
+        vertical="false"
+        formControlName="tempoTreino"
+      ></mat-slider>
 
-      <button mat-raised-button color="primary" type="submit">Proximo</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Proximo
+      </button>
     </form>
   </mat-card-content>
 </mat-card>

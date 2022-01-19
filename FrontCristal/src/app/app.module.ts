@@ -4,6 +4,7 @@ import { Material } from '../assets/module/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -14,6 +15,9 @@ import { CadastroComplementarComponent } from './componentes/cadastro/cadastro-c
 import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
 import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
 import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/esqueci-minha-senha.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -26,7 +30,8 @@ import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/es
     CadastroComplementarComponent,
     CadastroCandidatoSocialComponent,
     StatusCandidaturaComponent,
-    EsqueciMinhaSenhaComponent
+    EsqueciMinhaSenhaComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +39,10 @@ import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/es
     Material,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],
   schemas: []
 })
