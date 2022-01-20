@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { responseLogin } from './../Model/responseLogin.model';
 import { LoginModel } from './../Model/Login.model';
 import { HttpClient } from '@angular/common/http';
@@ -7,7 +8,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class LoginService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+    private router: Router) {
     this.apiURL = 'http://localhost:8080';
   }
 
@@ -23,6 +25,7 @@ export class LoginService {
     .subscribe(
       (resultado) => {
         alert('Seja bem-vindo '+resultado.nome+" você é um " + resultado.profile);
+        this.router.navigateByUrl('/');
       },
       (erro) => {
         alert("Encontramos erros: " + erro.message)

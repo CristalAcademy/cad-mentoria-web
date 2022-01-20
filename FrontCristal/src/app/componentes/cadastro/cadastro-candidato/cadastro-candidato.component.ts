@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CadastroCandidatoSocialComponent } from './../cadastro-candidato-social/cadastro-candidato-social.component';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -12,11 +13,11 @@ import {
   templateUrl: './cadastro-candidato.component.html',
   styleUrls: ['./cadastro-candidato.component.scss'],
 })
-export class CadastroComplementarComponent implements OnInit {
+export class CadastroCandidatoComponent implements OnInit {
   f = FormControl;
   minDate!: Date;
   maxDate!: Date;
-  constructor(private formBd: FormBuilder) {
+  constructor(private formBd: FormBuilder, private router: Router) {
     const hoje = new Date();
     const maiorDeDezoito = new Date().setDate(hoje.getDate() - 6575);
     const menorDeNoventa = new Date().setDate(hoje.getDate() - 33000);
@@ -46,7 +47,9 @@ export class CadastroComplementarComponent implements OnInit {
     }
     return 'Senha deve ter ao menos de 8 caracteres';
   }
-  onSubmit() {}
+  onSubmit() {
+    this.router.navigateByUrl('/social');
+  }
   element(key: string) {
     return this.form.get(key);
   }

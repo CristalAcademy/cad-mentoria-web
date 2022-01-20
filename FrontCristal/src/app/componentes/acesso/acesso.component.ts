@@ -8,14 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AcessoComponent implements OnInit {
   constructor() {}
 
-  log = true;
-
   ngOnInit(): void {}
 
-  cadastro() {
-    this.log = false;
-  }
-  login() {
-    this.log = true;
-  }
 }

@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
     let login = new LoginModel(this.form.value.email, this.form.value.password);
 
     this.loginService.logar(login);
+    
   }
 
   getErrorMessage(prop: string): string {

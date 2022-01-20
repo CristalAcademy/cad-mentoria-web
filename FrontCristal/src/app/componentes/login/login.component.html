@@ -1,4 +1,5 @@
 <mat-card>
+  <app-acesso></app-acesso>
   <mat-card-content class="content mat-login">
     <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <img src="../../../assets/img/loginCristal.svg" alt="Login" />
@@ -43,7 +44,7 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
         <mat-hint color="primary" align="end">
-          <a href="#">Esqueci minha senha</a>
+          <a routerLink="/esqueci-minha-senha">Esqueci minha senha</a>
         </mat-hint>
       </mat-form-field>
 

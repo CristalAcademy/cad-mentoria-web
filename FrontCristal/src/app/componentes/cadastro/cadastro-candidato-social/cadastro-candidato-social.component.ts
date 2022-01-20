@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -15,7 +16,8 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   f = FormControl;
   minDate!: Date;
   maxDate!: Date;
-  constructor(private formBd: FormBuilder) {
+  constructor(private formBd: FormBuilder,
+    private router: Router) {
     const hoje = new Date();
     const quinzena = new Date().setDate(hoje.getDate() + 15);
     this.minDate = new Date(hoje);
@@ -33,6 +35,6 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   }
 
   onSubmit(){
-
+    this.router.navigateByUrl('/');
   }
 }
