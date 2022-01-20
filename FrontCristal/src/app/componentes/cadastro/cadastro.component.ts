@@ -45,7 +45,10 @@ export class CadastroComponent implements OnInit {
     return 'Senha deve ter ao menos de 8 caracteres';
   }
   onSubmit() {
-    this.router.navigateByUrl('/candidato');
+    if (!this.form.invalid) {
+      this.router.navigateByUrl('/candidato');
+    }
+    console.log('Formulario está invalido ');
   }
   element(key: string) {
     return this.form.get(key);

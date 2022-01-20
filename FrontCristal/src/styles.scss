@@ -44,3 +44,10 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.mat-card {
+  padding: 0px;
+}
+.mat-raised-button.mat-button-disabled.mat-button-disabled {
+  background-color: #ff56225e;
+  color: rgba(255, 255, 255, 0.788);
+}
