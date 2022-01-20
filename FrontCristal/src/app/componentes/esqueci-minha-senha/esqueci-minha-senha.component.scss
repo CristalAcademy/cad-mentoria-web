@@ -1,0 +1,46 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+
+  mat-card-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    justify-items: center;
+    background-color: #000000de;
+    padding: 50px 60px;
+    border-radius: 20px;
+    align-items: center;
+    animation: 0.6s show forwards;
+    box-shadow: 1px 8px 16px 0px rgba(53, 53, 53, 0.712);
+
+    mat-label,
+    input::placeholder {
+      color: white;
+    }
+    input {
+      color: #e05928;
+      margin: 15px 10px;
+    }
+    button {
+      margin: 25px auto 0px auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    mat-label {
+      margin-top: 5px;
+    }
+  }
+}
+img {
+  max-width: 80px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+h1 {
+  color: white;
+  text-align: center;
+}

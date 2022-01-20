@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>{{ title }}</mat-card-title>
+
+  <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+
+  <mat-card-content> {{ mensagem }} </mat-card-content>
+
+  <button
+    mat-raised-button
+    color="primary"
+    *ngFor="let option of options"
+    (click)="(acao(option))"
+  >
+    {{ option }}
+  </button>
+</mat-card>

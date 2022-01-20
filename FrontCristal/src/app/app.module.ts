@@ -10,6 +10,10 @@ import { LoginComponent } from './componentes/login/login.component';
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { AcessoComponent } from './views/acesso/acesso.component';
 import { TooltipComponent } from './componentes/tooltip/tooltip.component';
+import { CadastroComplementarComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
+import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
+import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
+import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/esqueci-minha-senha.component';
 
 
 @NgModule({
@@ -19,6 +23,10 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
     CadastroComponent,
     AcessoComponent,
     TooltipComponent,
+    CadastroComplementarComponent,
+    CadastroCandidatoSocialComponent,
+    StatusCandidaturaComponent,
+    EsqueciMinhaSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,5 +38,6 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: []
 })
 export class AppModule {}
