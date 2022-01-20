@@ -44,8 +44,9 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-.mat-card {
+::ng-deep .mat-card .mat-card:not .mat-elevation-z {
   padding: 0px;
+  box-shadow: none;
 }
 .mat-raised-button.mat-button-disabled.mat-button-disabled {
   background-color: #ff56225e;

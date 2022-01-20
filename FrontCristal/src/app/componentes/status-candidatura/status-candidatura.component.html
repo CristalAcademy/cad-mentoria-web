@@ -5,12 +5,8 @@
 
   <mat-card-content> {{ mensagem }} </mat-card-content>
 
-  <button
-    mat-raised-button
-    color="primary"
-    *ngFor="let option of options"
-    (click)="(acao(option))"
-  >
+  <button mat-raised-button color="primary" *ngFor="let option of options" (click)="(acao(option))">
     {{ option }}
   </button>
 </mat-card>
+<app-footer></app-footer>

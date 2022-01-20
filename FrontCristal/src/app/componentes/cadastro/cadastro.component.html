@@ -1,5 +1,5 @@
 <mat-card>
-  <app-acesso></app-acesso>
+
   <mat-card-content>
     <div class="form" *ngIf="form" [formGroup]="form">
       <img src="../../../assets/img/cadastroCristal.svg" alt="Login" />
@@ -47,6 +47,8 @@
       <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">
         Continuar
       </button>
+      <a class="LinkLogin" routerLink="/login">Já possui cadastro? Faça o login</a>
     </div>
   </mat-card-content>
 </mat-card>
+<app-footer></app-footer>

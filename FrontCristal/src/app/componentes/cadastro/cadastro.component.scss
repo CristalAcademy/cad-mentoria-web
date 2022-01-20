@@ -46,6 +46,16 @@ h1 {
     transform: translate3d(0, 0, 0);
   }
 }
+.LinkLogin {
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 3px 5px;
+  color: white;
+  text-align: center;
+}
+.LinkLogin:hover {
+  color: #e05928;
+}
 .form {
   display: flex;
   flex-direction: column;
