@@ -5,7 +5,7 @@ import {
   FormBuilder,
   FormControl,
 } from '@angular/forms';
-import { CadastroCandidatoService } from 'src/app/services/cadastro-candidato.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,7 +14,7 @@ import { CadastroCandidatoService } from 'src/app/services/cadastro-candidato.se
 })
 export class CadastroComponent implements OnInit {
   f = FormControl;
-  constructor(private formBd: FormBuilder) {}
+  constructor(private formBd: FormBuilder, private router: Router) {}
 
   form!: FormGroup;
 
@@ -24,30 +24,30 @@ export class CadastroComponent implements OnInit {
     this.form = this.formBd.group({
       nome: this.formBd.control('', [Validators.required]),
       email: this.formBd.control('', [Validators.required, Validators.email]),
-      password: this.formBd.control('', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
-      passwordC: this.formBd.control('', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
+      password: this.formBd.control('', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(16),
+      ]),
+      passwordC: this.formBd.control('', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(16),
+      ]),
     });
   }
   getErrorMessage(prop: string) {
-
     if (this.element(prop)!.hasError('required')) {
       return 'Campo não pode ser vazio';
-    }else  if (this.element(prop)!.hasError('email')) {
+    } else if (this.element(prop)!.hasError('email')) {
       return 'Email não está válido';
     }
     return 'Senha deve ter ao menos de 8 caracteres';
   }
   onSubmit() {
-
-    let candidato = new CadastroCandidatoService(
-      this.form.value.nome,
-      this.form.value.email,
-      this.form.value.password,
-      this.form.value.passwordC
-    );
-    console.log(candidato);
+    this.router.navigateByUrl('/candidato');
   }
-  element(key : string) {
+  element(key: string) {
     return this.form.get(key);
   }
 }

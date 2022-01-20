@@ -54,3 +54,7 @@ textarea.mat-input-element {
   color: #e05928;
   margin: 20px 0px 0px 0px;
 }
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+  padding: 0;
+}

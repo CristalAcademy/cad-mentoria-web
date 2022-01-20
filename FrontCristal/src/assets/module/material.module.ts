@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -103,8 +104,12 @@ import { MatSliderModule } from '@angular/material/slider';
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'legacy' },
+      useValue: { appearance: 'legacy' }
     },
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'pt-BR'
+    }
   ],
 })
 export class Material {}
