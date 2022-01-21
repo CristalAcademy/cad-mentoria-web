@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status-candidatura.component.scss'],
 })
 export class StatusCandidaturaComponent implements OnInit {
-  title = 'OPS';
+  title = 'OPS...';
   subtitle = 'Desculpe a demora';
   mensagem = 'Ainda estamos avaliando seu perfil';
   options = ['Sair', 'Continuar'];
 
   acao(opt: string) {
     if (opt == 'Sair') {
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/login');
     } else {
-       '';
+      ('');
     }
   }
 
