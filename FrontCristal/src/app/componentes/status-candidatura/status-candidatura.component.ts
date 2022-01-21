@@ -8,21 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusCandidaturaComponent implements OnInit {
   id!: number;
-  title! : string;
-  subtitle! : string;
-  mensagem! : string;
-  options! : string[];
-
+  title!: string;
+  subtitle!: string;
+  mensagem!: string;
+  options!: string[];
 
   acao(opt: string) {
     if (opt == 'Sair') {
       this.router.navigateByUrl('/');
     } else if (opt == 'Continuar') {
       this.router.navigateByUrl('/candidato');
-    } else if(opt=='Cancelar inscrição'){
+    } else if (opt == 'Cancelar inscrição') {
       this.router.navigateByUrl('/cadastro');
-    } else if(opt=='Ver cronograma'){
-      
+    } else if (opt == 'Ver cronograma') {
     }
   }
 
@@ -56,12 +54,12 @@ export class StatusCandidaturaComponent implements OnInit {
         case 3: {
           this.title = 'Ah não';
           this.subtitle = 'Não foi dessa vez';
-          this.mensagem = 'Infelizmente seu perfil ainda não se adequa a refinaria';
+          this.mensagem =
+            'Infelizmente seu perfil ainda não se adequa a refinaria';
           this.options = ['Cancelar inscrição'];
           break;
         }
       }
     });
-
   }
 }

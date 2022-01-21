@@ -1,0 +1,78 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  background-color: transparent;
+  box-shadow: none;
+
+  mat-hint {
+    color: white;
+  }
+
+  mat-card-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    min-width: 260px;
+    max-width: 700px;
+    padding: 30px;
+    margin: 20px auto 0px auto;
+    background-color: #000000de;
+    border-radius: 20px;
+    animation: 0.6s show forwards;
+    box-shadow: 1px 8px 16px 0px rgba(31, 31, 31, 0.795);
+    .form {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        margin-top: 25px;
+        padding: 5px 20px;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+input::placeholder,
+mat-label,
+mat-icon {
+  color: white;
+}
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: white;
+}
+input {
+  background-color: transparent;
+  margin: 15px 10px;
+  font-size: 1.2rem;
+  color: #e05928;
+}
+
+a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 3px 5px;
+  color: white;
+}
+a:hover {
+  color: #e05928;
+}
+
+img {
+  max-width: 130px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+span {
+  color: red;
+}
+::ng-deep .mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+::ng-deep .mat-card {
+  background-color: transparent;
+}
