@@ -3,6 +3,7 @@ mat-card {
   flex-direction: column;
   padding: 0px;
   background-color: transparent;
+  box-shadow: none;
   mat-card-content.mat-login {
     display: flex;
     justify-content: space-around;
@@ -11,9 +12,9 @@ mat-card {
     justify-items: center;
     min-width: 260px;
     max-width: 700px;
+    padding: 25px;
     margin: 20px auto 0px auto;
     background-color: #000000de;
-    padding: 25px;
     border-radius: 20px;
     animation: 0.6s show forwards;
     box-shadow: 1px 8px 16px 0px rgba(31, 31, 31, 0.795);
