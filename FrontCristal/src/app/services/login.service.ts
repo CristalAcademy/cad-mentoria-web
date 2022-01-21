@@ -18,14 +18,14 @@ export class LoginService {
   logar(loginModel:LoginModel) {
     var user = {
       email: loginModel.email,
-      senha: loginModel.senha,
+      senha: loginModel.senha
     };
 
     this.http.post<responseLogin>(`${this.apiURL}/login`, user)
     .subscribe(
       (resultado) => {
         alert('Seja bem-vindo '+resultado.nome+" você é um " + resultado.profile);
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/status/2');
       },
       (erro) => {
         alert("Encontramos erros: " + erro.message)

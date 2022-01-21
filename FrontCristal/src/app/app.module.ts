@@ -1,3 +1,4 @@
+import { AtualizarSenhaComponent } from './componentes/atualizar-senha/atualizar-senha.component';
 import { CadastroCandidatoComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
   declarations: [
     AppComponent,
     LoginComponent,
+    AtualizarSenhaComponent,
     CadastroComponent,
     TooltipComponent,
     CadastroCandidatoComponent,
