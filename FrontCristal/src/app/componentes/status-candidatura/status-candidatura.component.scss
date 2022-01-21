@@ -13,12 +13,14 @@ mat-card {
   border-radius: 20px;
   animation: 0.6s show forwards;
   box-shadow: 1px 8px 16px 0px rgba(31, 31, 31, 0.795);
-  s mat-card-title {
-    height: 80px;
-    font-size: 75px;
-    color: darkorange;
+  mat-card-title {
+    line-height: 1;
+    font-size: 4rem;
+    color: white;
   }
+
   mat-card-subtitle {
+    line-height: 1;
     font-size: 35px;
     color: #e05928;
     margin: 15px 0px;
@@ -28,10 +30,7 @@ mat-card {
     font-size: 22px;
     color: white;
   }
-  mat-card-title {
-    font-size: 4rem;
-    color: white;
-  }
+
   button {
     margin: 0px 5px;
   }

@@ -19,6 +19,7 @@ import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
 
 import { HomeComponent } from './views/home/home.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { DialogCronogramaComponent } from './componentes/dialog-cronograma/dialog-cronograma.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     SnackbarComponent,
     HomeComponent,
     FooterComponent,
+    DialogCronogramaComponent,
   ],
   imports: [
     BrowserModule,
