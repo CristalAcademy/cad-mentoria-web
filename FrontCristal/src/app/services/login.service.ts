@@ -25,7 +25,7 @@ export class LoginService {
     .subscribe(
       (resultado) => {
         alert('Seja bem-vindo '+resultado.nome+" você é um " + resultado.profile);
-        this.router.navigateByUrl('/status/2');
+        this.router.navigateByUrl('/status/0');
       },
       (erro) => {
         alert("Encontramos erros: " + erro.message)

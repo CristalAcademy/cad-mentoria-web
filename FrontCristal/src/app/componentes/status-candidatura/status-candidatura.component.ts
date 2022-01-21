@@ -33,6 +33,9 @@ export class StatusCandidaturaComponent implements OnInit {
       case 'Ver cronograma': {
         this.dialog.open(DialogCronogramaComponent);
         break;
+      }case 'Voltar': {
+        this.router.navigateByUrl('/');
+        break;
       }
     }
   }
@@ -76,6 +79,14 @@ export class StatusCandidaturaComponent implements OnInit {
           this.options = ['Cancelar inscrição'];
           break;
         }
+        default: {
+          this.title = 'Erro 404';
+          this.subtitle = 'Não foi encontrado';
+          this.mensagem =
+            'Infelizmente não conseguimos seguir com sua solicitação, pois não entendemos onde gostaria de chegar';
+          this.options = ['Voltar'];
+          break;
+       }
       }
     });
   }

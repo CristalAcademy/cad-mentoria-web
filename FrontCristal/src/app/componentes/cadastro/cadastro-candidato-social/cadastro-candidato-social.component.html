@@ -26,7 +26,7 @@
         <mat-datepicker color="primary" #dp3 disabled="false"></mat-datepicker>
       </mat-form-field>
       <div>
-        <button mat-raised-button color="primary" type="">Pular</button>
+        <button mat-raised-button color="primary" (click)="aoPular()">Pular</button>
         <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">Proximo</button>
       </div>
     </div>
