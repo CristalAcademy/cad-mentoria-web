@@ -1,13 +1,15 @@
 .mat-card {
   display: flex;
   flex-direction: column;
+  box-shadow: none;
 
   button {
     width: 50%;
   }
 }
 section {
-  min-height: 100vh;
+  min-height: calc(100vh - 275px);
+  padding: 25px 0px;
   background: linear-gradient(
     -45deg,
     #fa00ff 12.5%,

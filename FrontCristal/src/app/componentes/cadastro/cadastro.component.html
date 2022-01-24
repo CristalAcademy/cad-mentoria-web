@@ -1,7 +1,7 @@
 <mat-card>
-  <app-acesso></app-acesso>
+
   <mat-card-content>
-    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form" *ngIf="form" [formGroup]="form">
       <img src="../../../assets/img/cadastroCristal.svg" alt="Login" />
       <h1>Cadastrar</h1>
       <mat-form-field>
@@ -44,9 +44,10 @@
         </button>
         <mat-hint align="end">{{ senhaC.value.length }} / 16</mat-hint>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">
         Continuar
       </button>
-    </form>
+      <a class="LinkLogin" routerLink="/login">Já possui cadastro? Faça o login</a>
+    </div>
   </mat-card-content>
 </mat-card>

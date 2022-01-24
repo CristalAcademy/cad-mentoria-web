@@ -1,9 +1,14 @@
 mat-card {
   display: flex;
   flex-direction: column;
-  background-color: transparent;
   padding: 0px;
+  background-color: transparent;
   box-shadow: none;
+
+  mat-hint {
+    color: white;
+  }
+
   mat-card-content {
     display: flex;
     justify-content: space-around;
@@ -12,54 +17,62 @@ mat-card {
     justify-items: center;
     min-width: 260px;
     max-width: 700px;
-    padding: 25px;
+    padding: 30px;
     margin: 20px auto 0px auto;
     background-color: #000000de;
     border-radius: 20px;
     animation: 0.6s show forwards;
     box-shadow: 1px 8px 16px 0px rgba(31, 31, 31, 0.795);
-
     .form {
       display: flex;
       flex-direction: column;
-      div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+
+      button {
+        margin-top: 25px;
+        padding: 5px 20px;
+        font-size: 1.3rem;
       }
     }
   }
 }
-mat-datepicker-toggle {
+input::placeholder,
+mat-label,
+mat-icon {
   color: white;
-}
-mat-datepicker-toggle.mat-datepicker-toggle-active {
-  color: #e05928;
-}
-img {
-  width: 80px;
-  margin: 0px auto;
-  margin-bottom: 15px;
 }
 h1 {
-  color: white;
+  font-size: 2.2rem;
   text-align: center;
-}
-mat-label,
-input::placeholder {
   color: white;
 }
 input {
+  background-color: transparent;
+  margin: 15px 10px;
+  font-size: 1.2rem;
   color: #e05928;
-}
-::ng-deep .mat-select-value {
-  color: #e05928;
-}
-textarea.mat-input-element {
-  color: #e05928;
-  margin: 20px 0px 0px 0px;
 }
 
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-  padding: 0;
+a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 3px 5px;
+  color: white;
+}
+a:hover {
+  color: #e05928;
+}
+
+img {
+  max-width: 130px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+span {
+  color: red;
+}
+::ng-deep .mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+::ng-deep .mat-card {
+  background-color: transparent;
 }

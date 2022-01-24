@@ -16,8 +16,7 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   f = FormControl;
   minDate!: Date;
   maxDate!: Date;
-  constructor(private formBd: FormBuilder,
-    private router: Router) {
+  constructor(private formBd: FormBuilder, private router: Router) {
     const hoje = new Date();
     const quinzena = new Date().setDate(hoje.getDate() + 15);
     this.minDate = new Date(hoje);
@@ -29,12 +28,19 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBd.group({
       classe: this.formBd.control('', [Validators.required]),
-      razao: this.formBd.control('', [Validators.required, Validators.minLength(8), Validators.maxLength(150)]),
+      razao: this.formBd.control('', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(150),
+      ]),
       agendar: this.formBd.control('', [Validators.required]),
     });
   }
 
-  onSubmit(){
-    this.router.navigateByUrl('/');
+  onSubmit() {
+    this.router.navigateByUrl('/status/2');
+  }
+  aoPular() {
+    this.router.navigateByUrl('/status/1');
   }
 }
