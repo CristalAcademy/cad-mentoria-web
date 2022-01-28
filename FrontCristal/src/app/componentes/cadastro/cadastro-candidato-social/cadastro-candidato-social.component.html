@@ -4,13 +4,24 @@
       <img src="../../../assets/img/cadastroCristal.svg" alt="Login" />
       <h1>Cadastrar</h1>
       <mat-form-field>
-        <mat-label>Classe social</mat-label>
+        <mat-label>Renda Familiar</mat-label>
         <mat-select formControlName="classe" required>
-          <mat-option value="one">Baixa</mat-option>
-          <mat-option value="two">Baixa/Média</mat-option>
-          <mat-option value="tree">Média</mat-option>
-          <mat-option value="four">Alta</mat-option>
+          <mat-option value="one">Risco</mat-option>
+          <mat-option value="two">Vunerável</mat-option>
+          <mat-option value="tree">Baixo</mat-option>
+          <mat-option value="four">Sustentável</mat-option>
+          <mat-option value="four">Médio</mat-option>
+          <mat-option value="five">Alto</mat-option>
         </mat-select>
+        <p class="term" (mouseover)="exibeTooltip()" (mouseleave)="escondeTooltip()">?</p>
+        <div class="tooltip" [class.visible]="visible">
+          <p><strong>Risco:</strong> 0 à R$1.200,00.</p>
+          <p><strong>Vunerável:</strong> R$1.200,00 à R$2.000,00 </p>
+          <p><strong>Baixo:</strong> R$2.000,00 à R$3.000,00</p>
+          <p><strong>Sustentável:</strong> R$3.000,00 à R$4.000,00</p>
+          <p><strong>Médio:</strong> R$4.000,00 à R$6.000,00 </p>
+          <p><strong>Alto:</strong> Mais de R$6.000,00 </p>
+        </div>
       </mat-form-field>
 
       <mat-form-field>
@@ -32,4 +43,3 @@
     </div>
   </mat-card-content>
 </mat-card>
-
