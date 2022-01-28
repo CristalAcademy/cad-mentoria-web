@@ -20,6 +20,8 @@ import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
 import { HomeComponent } from './views/home/home.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { DialogCronogramaComponent } from './componentes/dialog-cronograma/dialog-cronograma.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { AdmComponent } from './views/adm/adm.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { DialogCronogramaComponent } from './componentes/dialog-cronograma/dialo
     HomeComponent,
     FooterComponent,
     DialogCronogramaComponent,
+    MenuComponent,
+    AdmComponent,
   ],
   imports: [
     BrowserModule,

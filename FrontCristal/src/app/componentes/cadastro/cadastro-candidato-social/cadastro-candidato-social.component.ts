@@ -43,4 +43,19 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   aoPular() {
     this.router.navigateByUrl('/status/1');
   }
+
+  public visible = false;
+  public mouse = { x: 0, y: 0 };
+
+  alteraPosicaoDaTooltip(x: number, y: number) {
+    this.mouse = { x, y };
+  }
+
+  exibeTooltip() {
+    this.visible = true;
+  }
+
+  escondeTooltip() {
+    this.visible = false;
+  }
 }
