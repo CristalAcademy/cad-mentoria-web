@@ -1,5 +1,4 @@
 import { DialogCronogramaComponent } from './../dialog-cronograma/dialog-cronograma.component';
-import { DialogComponent } from './../dialog/dialog.component';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
