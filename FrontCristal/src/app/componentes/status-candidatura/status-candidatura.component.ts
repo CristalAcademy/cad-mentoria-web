@@ -1,5 +1,8 @@
+import { DialogCronogramaComponent } from './../dialog-cronograma/dialog-cronograma.component';
+import { DialogComponent } from './../dialog/dialog.component';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-status-candidatura',
@@ -14,17 +17,34 @@ export class StatusCandidaturaComponent implements OnInit {
   options!: string[];
 
   acao(opt: string) {
-    if (opt == 'Sair') {
-      this.router.navigateByUrl('/');
-    } else if (opt == 'Continuar') {
-      this.router.navigateByUrl('/candidato');
-    } else if (opt == 'Cancelar inscrição') {
-      this.router.navigateByUrl('/cadastro');
-    } else if (opt == 'Ver cronograma') {
+    switch (opt) {
+      case 'Sair': {
+        this.router.navigateByUrl('/');
+        break;
+      }
+      case 'Continuar': {
+        this.router.navigateByUrl('/candidato');
+        break;
+      }
+      case 'Cancelar inscrição': {
+        this.router.navigateByUrl('/cadastro');
+        break;
+      }
+      case 'Ver cronograma': {
+        this.dialog.open(DialogCronogramaComponent);
+        break;
+      }case 'Voltar': {
+        this.router.navigateByUrl('/');
+        break;
+      }
     }
   }
 
-  constructor(private router: Router, private ac: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private ac: ActivatedRoute,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.ac.params.subscribe((params) => {
@@ -59,6 +79,14 @@ export class StatusCandidaturaComponent implements OnInit {
           this.options = ['Cancelar inscrição'];
           break;
         }
+        default: {
+          this.title = 'Erro 404';
+          this.subtitle = 'Não foi encontrado';
+          this.mensagem =
+            'Infelizmente não conseguimos seguir com sua solicitação, pois não entendemos onde gostaria de chegar';
+          this.options = ['Voltar'];
+          break;
+       }
       }
     });
   }

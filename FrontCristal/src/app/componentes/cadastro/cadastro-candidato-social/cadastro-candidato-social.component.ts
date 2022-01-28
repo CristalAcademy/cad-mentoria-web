@@ -38,7 +38,10 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/status/2');
+  }
+  aoPular() {
+    this.router.navigateByUrl('/status/1');
   }
 
   public visible = false;
