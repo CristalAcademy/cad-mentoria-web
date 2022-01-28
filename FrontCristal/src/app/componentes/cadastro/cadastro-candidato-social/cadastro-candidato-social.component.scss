@@ -22,6 +22,7 @@ mat-card {
     .form {
       display: flex;
       flex-direction: column;
+      position: relative;
       div {
         display: flex;
         flex-direction: row;
@@ -62,4 +63,49 @@ textarea.mat-input-element {
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   padding: 0;
+}
+.tooltip {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(12, 12, 12);
+  border-radius: 8px;
+  color: #e05928;
+  display: none !important;
+  min-width: 100px;
+  padding: 20px 20px;
+  position: absolute;
+  z-index: 9;
+  right: -100px;
+  top: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.tooltip p {
+  font: 14px/1.6 "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.visible {
+  display: inline-block !important;
+}
+
+.term {
+  cursor: pointer;
+  display: inline-block;
+  color: #e05928;
+  position: absolute;
+  top: -8px;
+  right: -40px;
+  padding: 2px 7px;
+  font-size: 1rem;
+  border: #e05928 solid 3px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin: 0;
+}
+@media (max-width: 400px) {
+  .term {
+    display: none;
+  }
 }
