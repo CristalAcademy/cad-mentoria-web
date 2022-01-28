@@ -1,3 +1,4 @@
+import { AdmComponent } from './views/adm/adm.component';
 import { AtualizarSenhaComponent } from './componentes/atualizar-senha/atualizar-senha.component';
 import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
 import { CadastroCandidatoComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
@@ -41,6 +42,9 @@ const routes: Routes = [
   },{
     path: 'redefinir',
     component: AtualizarSenhaComponent
+  },{
+    path: 'menu/adm',
+    component: AdmComponent
   }
 ];
 
