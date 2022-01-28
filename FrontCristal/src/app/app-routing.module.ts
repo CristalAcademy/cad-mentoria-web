@@ -43,7 +43,7 @@ const routes: Routes = [
     path: 'redefinir',
     component: AtualizarSenhaComponent
   },{
-    path: 'menu/adm',
+    path: 'admin/home',
     component: AdmComponent
   }
 ];

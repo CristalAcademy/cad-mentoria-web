@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  //TO-DO WIP
   @Input()
   perfil! : string;
 

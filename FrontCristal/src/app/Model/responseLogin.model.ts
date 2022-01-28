@@ -1,7 +1,8 @@
-import { perfil } from './perfilEnum';
+import { Perfil } from './perfilEnum';
+
 export interface ResponseLogin {
   token: string;
-  perfil: perfil;
+  perfil: Perfil;
   email: string;
   permissoes: Array<Authority>;
 }
