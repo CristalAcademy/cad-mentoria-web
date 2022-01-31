@@ -5,11 +5,7 @@
   </mat-card-header>
 
   <mat-card-content>
-    <h3>Dashboard</h3>
-    <h3>Sala de aula</h3>
-    <h3>Aluno</h3>
-    <h3>Mentores</h3>
-    <h3>Controle de acesso</h3>
+    <h3 *ngFor="let itens of menu" (click)="(irPara(itens))">{{ itens.titulo }}</h3>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Logout</button>
