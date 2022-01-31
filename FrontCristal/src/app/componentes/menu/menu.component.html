@@ -1,13 +1,15 @@
 <mat-card>
   <mat-card-header>
-    <img matCardImage src="../../../assets/img/loginCristal.svg" />
-    <h1>Olá, {{ perfil }}</h1>
+    <img class="logoMenu" matCardImage src="../../../assets/img/Icon-Perfil.svg" />
+    <h1>Bem vindo, {{ perfil }}!</h1>
+    <h2>(Perfil)</h2>
+    <h3>Bom Dia!</h3>
   </mat-card-header>
 
   <mat-card-content>
     <h3 *ngFor="let itens of menu" (click)="(irPara(itens))">{{ itens.titulo }}</h3>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary">Logout</button>
+    <button mat-raised-button color="primary">Logout now</button>
   </mat-card-actions>
 </mat-card>
