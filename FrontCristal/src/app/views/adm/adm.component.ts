@@ -9,7 +9,9 @@ export class AdmComponent implements OnInit {
 
   constructor() { }
 
+  admin! : string;
   ngOnInit(): void {
+    this.admin= "Administrador";
   }
 
 }
