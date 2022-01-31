@@ -1,41 +1,108 @@
+::-webkit-scrollbar {
+  width: 8px;
+  height: 100%;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(3, 3, 41);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 34, 68, 0.788);
+  border-radius: 25px;
+  border: 1.5px solid rgb(3, 3, 41);
+}
 .mat-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  overflow: scroll;
+  direction: ltr;
   min-width: 250px;
-  max-width: 700px;
+  max-width: 300px;
   width: 40%;
+  background-color: rgb(3, 3, 41);
   justify-items: stretch;
+  padding-right: 27px;
+  z-index: 1000;
+  direction: rtl;
 
   .mat-card-header {
     display: flex;
     flex-direction: column;
-    padding: 10px auto;
+    padding-top: 20px;
     justify-items: center;
 
+    .logoMenu {
+      filter: invert(96%) sepia(100%) saturate(12%) hue-rotate(237deg)
+        brightness(103%) contrast(103%);
+    }
+    img {
+      max-width: 100%;
+    }
     .mat-card-image {
+      width: 100px;
+      height: 100px;
       margin: 0 auto;
-      width: 200px;
-      height: 200px;
       border-radius: 50%;
-      border: orangered 10px solid;
+      border: black 4px solid;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.45rem;
       text-align: center;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: white;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: white;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    h3 {
+      font-size: 1rem;
+      color: rgb(212, 212, 212);
+      text-align: center;
+      margin: 0px;
     }
   }
   .mat-card-content {
     h3 {
       font-size: 1.2rem;
-      text-align: center;
+      text-align: left;
+      color: white;
+      transition: 0.4s;
+      padding: 10px 0px;
+      padding-left: 20px;
+      margin: 0px;
     }
+    h3:hover {
+      background-color: rgb(255, 253, 253);
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      transform: translate3d(20px, 0px, 0);
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-left: orangered 5px solid;
+    }
+    padding: 25px 0px;
+    border-radius: 5px;
   }
   .mat-card-actions {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    button {
+      margin: 0px auto 15px auto;
+      padding: 0px 60px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: rgb(223, 61, 2);
+    }
   }
 }
