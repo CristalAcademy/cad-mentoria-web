@@ -3,7 +3,6 @@ mat-card {
   flex-direction: column;
   background-color: transparent;
   box-shadow: none;
-
   padding: 0px;
   mat-card-content {
     display: flex;
@@ -27,6 +26,10 @@ mat-card {
     .form {
       display: flex;
       flex-direction: column;
+    }
+    .logo-cadastro{
+      filter: invert(47%) sepia(47%) saturate(973%) hue-rotate(333deg) brightness(87%) contrast(102%);
+
     }
   }
 }

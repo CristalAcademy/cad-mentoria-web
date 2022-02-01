@@ -1,6 +1,6 @@
 import { AtualizarSenhaComponent } from './componentes/atualizar-senha/atualizar-senha.component';
 import { CadastroCandidatoComponent } from './componentes/cadastro/cadastro-candidato/cadastro-candidato.component';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Material } from '../assets/module/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,12 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { DialogCronogramaComponent } from './componentes/dialog-cronograma/dialog-cronograma.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { AdmComponent } from './views/adm/adm.component';
+import { CandidatoComponent } from './componentes/candidato/candidato.component';
+
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+import { TabelaComFiltroComponent } from './componentes/candidato/tabela-com-filtro/tabela-com-filtro.component';
+registerLocaleData(localePT);
 
 @NgModule({
   declarations: [
@@ -40,6 +46,8 @@ import { AdmComponent } from './views/adm/adm.component';
     DialogCronogramaComponent,
     MenuComponent,
     AdmComponent,
+    CandidatoComponent,
+    TabelaComFiltroComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,9 @@ import { AdmComponent } from './views/adm/adm.component';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-br' },
+   ],
   bootstrap: [AppComponent],
   schemas: [],
 })
