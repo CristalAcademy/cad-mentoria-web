@@ -27,6 +27,9 @@ mat-card {
         font-size: 1.3rem;
       }
     }
+    .logo-login{
+      filter: invert(47%) sepia(47%) saturate(973%) hue-rotate(333deg) brightness(87%) contrast(102%);
+    }
   }
 }
 input::placeholder,

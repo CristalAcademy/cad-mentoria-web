@@ -29,6 +29,9 @@ mat-card {
         justify-content: space-evenly;
       }
     }
+    .logo-cadastro{
+      filter: invert(47%) sepia(47%) saturate(973%) hue-rotate(333deg) brightness(87%) contrast(102%);
+    }
   }
 }
 mat-datepicker-toggle {
