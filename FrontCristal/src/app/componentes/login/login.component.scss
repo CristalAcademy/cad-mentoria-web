@@ -27,6 +27,10 @@ mat-card {
         font-size: 1.3rem;
       }
     }
+    .logoLogin {
+      filter: invert(41%) sepia(57%) saturate(1425%) hue-rotate(344deg)
+        brightness(91%) contrast(92%);
+    }
   }
 }
 input::placeholder,
