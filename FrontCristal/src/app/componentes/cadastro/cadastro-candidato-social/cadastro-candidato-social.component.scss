@@ -18,6 +18,10 @@ mat-card {
     border-radius: 20px;
     animation: 0.6s show forwards;
     box-shadow: 1px 8px 16px 0px rgba(31, 31, 31, 0.795);
+    .logoMenu {
+      filter: invert(41%) sepia(57%) saturate(1425%) hue-rotate(344deg)
+        brightness(91%) contrast(92%);
+    }
 
     .form {
       display: flex;
