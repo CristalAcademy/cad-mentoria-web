@@ -27,6 +27,7 @@ import { CandidatoComponent } from './componentes/candidato/candidato.component'
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { TabelaComFiltroComponent } from './componentes/candidato/tabela-com-filtro/tabela-com-filtro.component';
+import { BotaoClosedComponent } from './componentes/menu/botao-closed/botao-closed.component';
 registerLocaleData(localePT);
 
 @NgModule({
@@ -48,6 +49,7 @@ registerLocaleData(localePT);
     AdmComponent,
     CandidatoComponent,
     TabelaComFiltroComponent,
+    BotaoClosedComponent,
   ],
   imports: [
     BrowserModule,

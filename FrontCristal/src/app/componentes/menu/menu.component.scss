@@ -11,6 +11,9 @@
   border: 1.5px solid rgb(3, 3, 41);
 }
 .mat-card {
+  .botaoclosed {
+    width: 30px;
+  }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,7 +25,7 @@
   width: 40%;
   background-color: rgb(3, 3, 41);
   justify-items: stretch;
-  padding-right: 27px;
+  padding-right: 15px;
   z-index: 1000;
   direction: rtl;
 
@@ -48,7 +51,7 @@
     }
 
     h1 {
-      font-size: 1.45rem;
+      font-size: 1.2rem;
       text-align: center;
       margin-top: 20px;
       margin-bottom: 5px;
@@ -69,11 +72,12 @@
     }
   }
   .mat-card-content {
+    margin: 0px;
     h3 {
       font-size: 1.2rem;
       text-align: left;
       color: white;
-      transition: 0.4s;
+      transition: 0.6s;
       padding: 10px 0px;
       padding-left: 20px;
       margin: 0px;
@@ -83,7 +87,7 @@
       color: black;
       cursor: pointer;
       font-weight: bold;
-      transform: translate3d(20px, 0px, 0);
+      transform: translate3d(15px, 0px, 0);
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
       border-left: orangered 5px solid;
@@ -96,7 +100,7 @@
     flex-direction: column;
     justify-content: center;
     button {
-      margin: 0px auto 15px auto;
+      margin: 0px auto 35px auto;
       padding: 0px 60px;
       border-radius: 20px;
       transition: 0.3s;
@@ -104,5 +108,12 @@
     button:hover {
       background-color: rgb(223, 61, 2);
     }
+  }
+  .mat-card-actions::before {
+    content: "";
+    width: 110%;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 25px;
   }
 }
