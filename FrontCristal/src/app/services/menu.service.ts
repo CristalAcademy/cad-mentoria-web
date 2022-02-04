@@ -1,8 +1,7 @@
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Perfil } from '../Model/perfilEnum';
-import { Menu } from '../Model/menu.model';
+import { Perfil } from '../Model/PerfilEnum';
+import { Menu } from '../Model/Menu.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +15,7 @@ export class MenuService {
   menu!: Menu[];
 
   pegarMenuPorPerfil(perfil: Perfil) {
+    this.menu = [];
     switch (perfil) {
       case Perfil.ADMIN:
         this.menu.push({
@@ -69,61 +69,23 @@ export class MenuService {
         });
         return this.menu;
       case Perfil.CANDIDATO:
-        this.menu.push({ titulo: 'Dashboard', rota: '/admin/home', icon: '' });
         this.menu.push({
-          titulo: 'Sala de aula',
-          rota: '/admin/classroom',
-          icon: '',
-        });
-        this.menu.push({ titulo: 'Alunos', rota: '/admin/aluno', icon: '' });
-        this.menu.push({
-          titulo: 'Mentores',
-          rota: '/admin/Mentores',
-          icon: '',
-        });
-        this.menu.push({
-          titulo: 'Controle de acesso',
-          rota: '/admin/security',
+          titulo: 'Dashboard',
+          rota: '/candidato/home',
           icon: '',
         });
         return this.menu;
       case Perfil.TUTOR:
-        this.menu.push({ titulo: 'Dashboard', rota: '/admin/home', icon: '' });
+        this.menu.push({ titulo: 'Dashboard', rota: '/tutor/home', icon: '' });
         this.menu.push({
           titulo: 'Sala de aula',
-          rota: '/admin/classroom',
+          rota: '/tutor/classroom',
           icon: '',
         });
-        this.menu.push({ titulo: 'Alunos', rota: '/admin/aluno', icon: '' });
-        this.menu.push({
-          titulo: 'Mentores',
-          rota: '/admin/Mentores',
-          icon: '',
-        });
-        this.menu.push({
-          titulo: 'Controle de acesso',
-          rota: '/admin/security',
-          icon: '',
-        });
+        this.menu.push({ titulo: 'Alunos', rota: '/tutor/aluno', icon: '' });
         return this.menu;
       default:
-        this.menu.push({ titulo: 'Dashboard', rota: '/admin/home', icon: '' });
-        this.menu.push({
-          titulo: 'Sala de aula',
-          rota: '/admin/classroom',
-          icon: '',
-        });
-        this.menu.push({ titulo: 'Alunos', rota: '/admin/aluno', icon: '' });
-        this.menu.push({
-          titulo: 'Mentores',
-          rota: '/admin/Mentores',
-          icon: '',
-        });
-        this.menu.push({
-          titulo: 'Controle de acesso',
-          rota: '/admin/security',
-          icon: '',
-        });
+        this.menu.push({ titulo: 'Dashboard', rota: '/status/404', icon: '' });
         return this.menu;
     }
   }

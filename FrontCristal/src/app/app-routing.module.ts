@@ -1,3 +1,4 @@
+import { AlunoComponent } from './views/aluno/aluno.component';
 import { AdmComponent } from './views/adm/adm.component';
 import { AtualizarSenhaComponent } from './componentes/atualizar-senha/atualizar-senha.component';
 import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
@@ -43,8 +44,14 @@ const routes: Routes = [
     path: 'redefinir',
     component: AtualizarSenhaComponent
   },{
+    path: 'admin/candidato',
+    component: AdmComponent
+  },{
     path: 'admin/home',
     component: AdmComponent
+  },{
+    path: 'aluno/home',
+    component: AlunoComponent
   }
 ];
 
