@@ -15,6 +15,8 @@ export class MenuComponent implements OnInit {
   @Input()
   perfil!: Perfil;
 
+  open: boolean = false;
+
   menu!: Menu[];
 
   constructor(private menuService: MenuService, private router: Router) {}
@@ -25,5 +27,9 @@ export class MenuComponent implements OnInit {
 
   irPara(itens: Menu) {
     this.router.navigateByUrl(itens.rota);
+  }
+
+  changeOpen(event: boolean) {
+    this.open = event;
   }
 }
