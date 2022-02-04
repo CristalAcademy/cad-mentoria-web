@@ -1,4 +1,4 @@
-import { Perfil } from './perfilEnum';
+import { Perfil } from './PerfilEnum';
 
 export interface ResponseLogin {
   token: string;
@@ -7,6 +7,6 @@ export interface ResponseLogin {
   permissoes: Array<Authority>;
 }
 
-interface Authority {
+export interface Authority {
   autority: string;
 }

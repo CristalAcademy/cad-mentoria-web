@@ -14,7 +14,7 @@ import { TooltipComponent } from './componentes/tooltip/tooltip.component';
 import { CadastroCandidatoSocialComponent } from './componentes/cadastro/cadastro-candidato-social/cadastro-candidato-social.component';
 import { StatusCandidaturaComponent } from './componentes/status-candidatura/status-candidatura.component';
 import { EsqueciMinhaSenhaComponent } from './componentes/esqueci-minha-senha/esqueci-minha-senha.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
 
 import { HomeComponent } from './views/home/home.component';
@@ -28,6 +28,8 @@ import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { TabelaComFiltroComponent } from './componentes/candidato/tabela-com-filtro/tabela-com-filtro.component';
 import { BotaoClosedComponent } from './componentes/menu/botao-closed/botao-closed.component';
+import { AlunoComponent } from './views/aluno/aluno.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 registerLocaleData(localePT);
 
 @NgModule({
@@ -50,6 +52,7 @@ registerLocaleData(localePT);
     CandidatoComponent,
     TabelaComFiltroComponent,
     BotaoClosedComponent,
+    AlunoComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,8 +65,13 @@ registerLocaleData(localePT);
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-br' },
-   ],
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
   schemas: [],
 })
-export class AppModule {}
+export class AppModule { }

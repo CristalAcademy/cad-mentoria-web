@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { MenuService } from './../../services/menu.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Perfil } from 'src/app/Model/perfilEnum';
-import { Menu } from 'src/app/Model/menu.model';
+import { Perfil } from 'src/app/Model/PerfilEnum';
+import { Menu } from 'src/app/Model/Menu.model';
 
 @Component({
   selector: 'app-menu',
@@ -10,16 +10,17 @@ import { Menu } from 'src/app/Model/menu.model';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+
   //TO-DO WIP
   @Input()
-  perfil!: string;
+  perfil!: Perfil;
 
   menu!: Menu[];
 
   constructor(private menuService: MenuService, private router: Router) {}
 
   ngOnInit(): void {
-    this.menu = this.menuService.pegarMenuPorPerfil(Perfil.ADMIN);
+    this.menu = this.menuService.pegarMenuPorPerfil(this.perfil);
   }
 
   irPara(itens: Menu) {

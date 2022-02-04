@@ -1,39 +1,40 @@
-import { Router } from '@angular/router';
-import { ResponseLogin } from './../Model/responseLogin.model';
+
+import { ProfileManagerService } from './profile-manager.service';
+import { ResponseLogin } from '../Model/ResponseLogin.model';
 import { LoginModel } from './../Model/Login.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Perfil } from '../Model/perfilEnum';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-  constructor(private http: HttpClient,
-    private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private profileManager: ProfileManagerService,
+  ) {
     this.apiURL = 'http://localhost:8080';
   }
 
   readonly apiURL!: string;
 
-  logar(loginModel:LoginModel) {
+  logar(loginModel: LoginModel) {
     var user = {
       email: loginModel.email,
-      senha: loginModel.senha
+      senha: loginModel.senha,
     };
 
-    this.http.post<ResponseLogin>(`${this.apiURL}/authenticate`, user)
-    .subscribe(
-      (resultado) => {
-        if(resultado.perfil==Perfil.ADMIN){
-          this.router.navigateByUrl('/admin/home');
-        }else{
-        this.router.navigateByUrl('/status/0');
-      }
-      },
-      (erro) => {
-        alert("Encontramos erros: " + erro.message)
-      }
-    );
+    this.http
+      .post<ResponseLogin>(`${this.apiURL}/authenticate`, user)
+      .subscribe(
+        (resultado) => {
+          localStorage.setItem('login', JSON.stringify(resultado));
+          let res: ResponseLogin = resultado;
+          this.profileManager.handler(res.perfil);
+        },
+        (erro) => {
+          alert('Encontramos erros: ' + erro.message);
+        }
+      );
   }
 }

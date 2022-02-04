@@ -13,11 +13,12 @@
 .main {
   margin: none;
   text-align: center;
+
   .mat-form-field {
-    grid-column: 1/-1;
     font-size: 14px;
-    width: 60%;
-    input {
+    width: 50%;
+
+    input{
       margin: 15px 10px;
       color: #e05928;
     }
@@ -26,6 +27,11 @@
       color: white;
     }
   }
+  mat-checkbox,h4 {
+    color: white;
+    padding: 5px;
+  }
+
   .conteiner-table {
     grid-column: 1/-1;
     max-height: 300px;
