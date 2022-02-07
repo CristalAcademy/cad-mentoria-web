@@ -1,0 +1,37 @@
+<mat-card>
+
+  <mat-card-content class="content mat-login">
+    <div class="form" *ngIf="form" [formGroup]="form">
+      <img src="../../../assets/img/loginCristal.svg" class="logoLogin" alt="Login" />
+      <h1>Entrar</h1>
+
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" matInput type="email" placeholder="Ex. e@cristal.com" name="email" required />
+        <mat-error *ngIf="this.form.get('email')">
+          {{ getErrorMessage("email") }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" name="senha" maxlength="16" #senha required />
+        <mat-error *ngIf="this.form.get('password')">
+          {{ getErrorMessage("password") }}
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint color="primary" align="end">
+          <a routerLink="/esqueci-minha-senha">Esqueci minha senha</a>
+        </mat-hint>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">
+        Entrar
+      </button>
+      <a class="LinkCadastro" routerLink="/cadastro">Sem login? Cadastre-se agora!</a>
+
+    </div>
+  </mat-card-content>
+</mat-card>

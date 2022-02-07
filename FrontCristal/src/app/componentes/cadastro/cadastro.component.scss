@@ -1,0 +1,103 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0px;
+  mat-card-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    min-width: 260px;
+    max-width: 700px;
+    padding: 25px;
+    margin: 20px auto 0px auto;
+    background-color: #000000de;
+    border-radius: 20px;
+    animation: 0.6s show forwards;
+    box-shadow: 1px 8px 16px 0px rgba(31, 31, 31, 0.795);
+
+    .logoMenu {
+      filter: invert(41%) sepia(57%) saturate(1425%) hue-rotate(344deg)
+        brightness(91%) contrast(92%);
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-cadastro{
+      filter: invert(47%) sepia(47%) saturate(973%) hue-rotate(333deg) brightness(87%) contrast(102%);
+
+    }
+  }
+}
+input {
+  margin: 15px 10px;
+  color: #e05928;
+}
+input::placeholder,
+mat-label {
+  color: white;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.LinkLogin {
+  font-size: 0.8rem;
+  text-decoration: none;
+  padding: 3px 5px;
+  color: white;
+  text-align: center;
+}
+.LinkLogin:hover {
+  color: #e05928;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  .mat-form-field {
+    color: white;
+  }
+  .mat-raised-button {
+    font-size: 1.3rem;
+    margin: 25px auto 0px auto;
+    padding: 5px 20px;
+    max-width: 130px;
+    justify-content: center;
+  }
+  .mat-form-field-underline {
+    background-color: white;
+  }
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-hint {
+  color: white;
+}
+img {
+  width: 80px;
+  margin: 0px auto;
+  margin-bottom: 15px;
+}
+
+.picker-icon .mat-icon-button,
+.mat-datepicker-toggle,
+mat-datepicker-toggle {
+  color: white !important;
+}

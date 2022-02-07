@@ -1,0 +1,28 @@
+<mat-card>
+
+  <mat-card-content>
+    <div class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <img src="../../../assets/img/EsqueciSenhaCristal.svg" alt="Login" />
+      <h1>Esqueceu a senha?</h1>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" matInput type="email" placeholder="Ex. e@cristal.com" name="email" required />
+        <mat-error *ngIf="this.form.get('email')">{{
+          getErrorMessage("email")
+          }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirme seu E-mail</mat-label>
+        <input formControlName="emailC" matInput type="email" placeholder="Ex. e@cristal.com" name="emailC" required />
+        <mat-error *ngIf="this.form.get('emailC')">
+          {{ getErrorMessage("emailC") }}
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Enviar e-mail
+      </button>
+      <a routerLink="/login">Lembrou sua senha? Faça o login</a>
+    </div>
+  </mat-card-content>
+</mat-card>

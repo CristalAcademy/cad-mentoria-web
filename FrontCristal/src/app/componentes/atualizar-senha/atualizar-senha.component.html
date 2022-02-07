@@ -1,0 +1,36 @@
+<mat-card>
+
+  <mat-card-content class="content">
+    <div class="form" *ngIf="form" [formGroup]="form">
+      <img class="logoMenu" src="../../../assets/img/EsqueciSenhaCristal.svg" alt="Login" />
+      <h1>Atualizar a senha</h1>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" name="senha" maxlength="16" #senha required />
+        <mat-error *ngIf="this.form.get('password')">{{
+          getErrorMessage("password")
+          }}</mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint align="end">{{ senha.value.length }} / 16</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirme a senha</mat-label>
+        <input formControlName="passwordC" matInput [type]="hide ? 'password' : 'text'" name="confirmarSenha" maxlength="16" #senhaC required />
+        <mat-error *ngIf="this.form.get('passwordC')">{{
+          getErrorMessage("passwordC")
+          }}</mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint align="end">{{ senhaC.value.length }} / 16</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="openDialog()">
+
+        Atualizar senha
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

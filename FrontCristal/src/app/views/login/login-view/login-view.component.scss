@@ -1,0 +1,35 @@
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+
+  button {
+    width: 50%;
+  }
+}
+section {
+  min-height: calc(100vh - 275px);
+  background: linear-gradient(
+      -45deg,
+      #fa00ff 12.5%,
+      #2400ff 25%,
+      #00ffd1 37.5%,
+      #42ff00 50%,
+      #fff500 62.5%,
+      #ff7a00 75%,
+      #ff0000 87.5%
+  );
+  background-size: 400% 400%;
+  animation: gradient 20s infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

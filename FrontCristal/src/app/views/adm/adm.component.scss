@@ -1,0 +1,11 @@
+.conteiner {
+  app-menu {
+    justify-content: left;
+    position: fixed;
+    z-index: 999;
+  }
+  app-candidato {
+    justify-content: center;
+    display: flex;
+  }
+}
