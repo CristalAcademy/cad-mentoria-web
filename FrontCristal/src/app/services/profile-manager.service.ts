@@ -15,15 +15,15 @@ export class ProfileManagerService {
 
     switch (perfil) {
       case Perfil.ADMIN: {
-        this.router.navigateByUrl('/admin/home');
+        this.router.navigateByUrl('portal/admin/home');
         break
       }
       case Perfil.ALUNO: {
-        this.router.navigateByUrl('/aluno/home');
+        this.router.navigateByUrl('portal/aluno/home');
         break
       }
       default: {
-        this.router.navigateByUrl('/status/0');
+        this.router.navigateByUrl('portal/status/0');
         console.log("Seu perfil é "+perfil)
         break;
       }
