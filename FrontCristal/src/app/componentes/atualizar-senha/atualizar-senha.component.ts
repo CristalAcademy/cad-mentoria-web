@@ -1,5 +1,5 @@
-import { Router, ActivatedRoute, Params} from '@angular/router';
-import { DialogComponent } from './../dialog/dialog.component';
+import { PasswordService } from './../../services/password.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -7,7 +7,6 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-atualizar-senha',
@@ -16,13 +15,18 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AtualizarSenhaComponent implements OnInit {
   f = FormControl;
-  constructor(private formBd: FormBuilder, public dialog: MatDialog, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private formBd: FormBuilder,
+    private activatedRoute: ActivatedRoute,
+    private passwordService: PasswordService
+  ) {}
 
   form!: FormGroup;
 
   public hide: boolean = true;
-  ngOnInit() {
 
+  hash!: string;
+  ngOnInit() {
     this.form = this.formBd.group({
       password: this.formBd.control('', [
         Validators.required,
@@ -35,8 +39,7 @@ export class AtualizarSenhaComponent implements OnInit {
         Validators.maxLength(16),
       ]),
     });
-    this.activatedRoute.snapshot.paramMap.get('id');
-
+    this.hash = this.activatedRoute.snapshot.paramMap.get('hash') || '';
   }
 
   getErrorMessage(prop: string) {
@@ -51,6 +54,13 @@ export class AtualizarSenhaComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(DialogComponent);
+    if (
+      this.hash.length > 1 &&
+      this.form.value.password == this.form.value.passwordC
+    ) {
+      this.passwordService.attPass(this.form.value.password, this.hash);
+    }else{
+      alert("Isso :" +(this.hash.length > 1) + " e isso : "+ (this.form.value.password == this.form.value.passwordC))
+    }
   }
 }

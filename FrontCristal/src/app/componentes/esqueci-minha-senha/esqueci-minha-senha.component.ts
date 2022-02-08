@@ -1,3 +1,4 @@
+import { PasswordService } from './../../services/password.service';
 import {
   FormControl,
   FormBuilder,
@@ -13,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsqueciMinhaSenhaComponent implements OnInit {
   f = FormControl;
-  constructor(private formBd: FormBuilder) {}
+  constructor(private formBd: FormBuilder, private passwordService : PasswordService) {}
 
   form!: FormGroup;
 
@@ -37,12 +38,11 @@ export class EsqueciMinhaSenhaComponent implements OnInit {
     return this.form.get(key);
   }
 
-
   onSubmit() {
-    let candidato = new (
-      this.form.value.email,
-      this.form.value.emailC
-    );
-    console.log(candidato);
+    if (this.form.value.email == this.form.value.emailC) {
+      this.passwordService.forgotPass(this.form.value.email);
+    }else {
+      console.log("deu ruim:"+(this.form.value.email == this.form.value.emailC))
+    }
   }
 }

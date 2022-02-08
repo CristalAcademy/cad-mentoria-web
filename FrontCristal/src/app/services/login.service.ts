@@ -4,6 +4,8 @@ import { ResponseLogin } from '../Model/ResponseLogin.model';
 import { LoginModel } from './../Model/Login.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,7 @@ export class LoginService {
     private http: HttpClient,
     private profileManager: ProfileManagerService,
   ) {
-    this.apiURL = 'http://localhost:8080';
+    this.apiURL = environment.path;
   }
 
   readonly apiURL!: string;

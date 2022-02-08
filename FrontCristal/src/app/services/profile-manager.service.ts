@@ -9,10 +9,6 @@ export class ProfileManagerService {
   constructor(private router: Router) {}
 
   handler(perfil: Perfil) {
-
-
-    console.log(perfil as Perfil)
-
     switch (perfil) {
       case Perfil.ADMIN: {
         this.router.navigateByUrl('portal/admin/home');

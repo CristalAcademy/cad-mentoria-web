@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Perfil } from 'src/app/Model/PerfilEnum';
 
 @Component({
   selector: 'app-portal-view',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortalViewComponent implements OnInit {
 
+ 
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
