@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.nomeUser = this.userService.discoveryEmail();
+    this.nomeUser = this.userService.discoveryNome();
     this.perfil = this.userService.discoveryPerfil();
     this.menu = this.menuService.pegarMenuPorPerfil(this.perfil);
   }
