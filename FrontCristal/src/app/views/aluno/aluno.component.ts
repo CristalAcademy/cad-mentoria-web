@@ -13,7 +13,7 @@ export class AlunoComponent implements OnInit {
   perfil: Perfil = Perfil.ALUNO;
   aluno!: string;
   ngOnInit(): void {
-    this.aluno = 'Aluno';
+   
   }
 
 }

@@ -1,7 +1,7 @@
 <mat-card>
 
   <mat-card-content>
-    <div class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form" *ngIf="form" [formGroup]="form">
       <img src="../../../assets/img/EsqueciSenhaCristal.svg" alt="Login" />
       <h1>Esqueceu a senha?</h1>
       <mat-form-field>
@@ -19,7 +19,7 @@
           {{ getErrorMessage("emailC") }}
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">
         Enviar e-mail
       </button>
       <a routerLink="/login">Lembrou sua senha? Faça o login</a>

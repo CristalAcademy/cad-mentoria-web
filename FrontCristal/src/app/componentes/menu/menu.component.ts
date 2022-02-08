@@ -1,6 +1,7 @@
+import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 import { MenuService } from './../../services/menu.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Perfil } from 'src/app/Model/PerfilEnum';
 import { Menu } from 'src/app/Model/Menu.model';
 
@@ -11,17 +12,22 @@ import { Menu } from 'src/app/Model/Menu.model';
 })
 export class MenuComponent implements OnInit {
 
-  //TO-DO WIP
-  @Input()
-  perfil!: Perfil;
+
+  public perfil!: Perfil;
+  public nomeUser!: string;
 
   open: boolean = false;
 
   menu!: Menu[];
 
-  constructor(private menuService: MenuService, private router: Router) {}
+  constructor(
+    private menuService: MenuService,
+    public userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.nomeUser = this.userService.discoveryEmail();
+    this.perfil = this.userService.discoveryPerfil();
     this.menu = this.menuService.pegarMenuPorPerfil(this.perfil);
   }
 

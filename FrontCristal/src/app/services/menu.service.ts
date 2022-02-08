@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Perfil } from '../Model/PerfilEnum';
 import { Menu } from '../Model/Menu.model';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
   constructor(private http: HttpClient) {
-    this.apiURL = 'http://localhost:8080';
+    this.apiURL = environment.path;
     this.menu = [];
   }
   readonly apiURL!: string;
