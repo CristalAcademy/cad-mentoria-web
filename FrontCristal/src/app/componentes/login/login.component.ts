@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     let login = new LoginModel(this.form.value.email, this.form.value.password);
-    console.log(login);
 
     this.loginService.logar(login);
   }

@@ -19,14 +19,10 @@ export class LoginService {
   readonly apiURL!: string;
 
   logar(loginModel: LoginModel) {
-    let user: any = {
+    let user = {
       email: loginModel.email,
       senha: loginModel.senha,
     };
-
-    console.log(user);
-
-    user = JSON.stringify(user);
 
     this.http
       .post<ResponseLogin>(`${this.apiURL}/authenticate`, user)
