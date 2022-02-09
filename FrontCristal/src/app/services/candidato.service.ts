@@ -18,7 +18,7 @@ export class CandidatoService {
       `${this.apiURL}/candidatos?status=AGUARDANDO`
     );
   }
-// TO-DO
+  // TO-DO
   buscarLista(filtro: FiltroCandidato): Observable<ResponseCandidato[]> {
     let params = new HttpParams();
 
@@ -29,5 +29,11 @@ export class CandidatoService {
     return this.http.get<ResponseCandidato[]>(
       `${this.apiURL}/candidatos?`,{params}
     );
+  }
+
+  buscarCandidatoPorId(id: string): Observable<ResponseCandidato> {
+    let params = new HttpParams();
+    params = params.set('estuda', id);
+    return this.http.get<ResponseCandidato>(`${this.apiURL}/candidatos/?`, { params });
   }
 }
