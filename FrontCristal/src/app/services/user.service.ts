@@ -45,8 +45,6 @@ export class UserService {
     let user: {
       nomeCompleto: string;
     } = JSON.parse(localStorage.getItem('user') || '');
-
-    console.log(user)
     return user.nomeCompleto;
   }
 }
