@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { ResponseLogin } from './../Model/ResponseLogin.model';
 import { ProfileManagerService } from './profile-manager.service';
 import { LoginModel } from './../Model/Login.model';
@@ -19,17 +20,19 @@ export class LoginService {
   readonly apiURL!: string;
 
   logar(loginModel: LoginModel) {
+    this.login(loginModel).subscribe((resultado) => {
+      localStorage.setItem('login', JSON.stringify(resultado));
+      let res: ResponseLogin = resultado;
+      this.profileManager.handler(res.perfil);
+    });
+  }
+
+  login(loginModel: LoginModel): Observable<ResponseLogin> {
     let user = {
       email: loginModel.email,
       senha: loginModel.senha,
     };
 
-    this.http
-      .post<ResponseLogin>(`${this.apiURL}/authenticate`, user)
-      .subscribe((resultado) => {
-        localStorage.setItem('login', JSON.stringify(resultado));
-        let res: ResponseLogin = resultado;
-        this.profileManager.handler(res.perfil);
-      });
+    return this.http.post<ResponseLogin>(`${this.apiURL}/authenticate`, user);
   }
 }
