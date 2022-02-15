@@ -1,0 +1,8 @@
+export enum CLASSE {
+    RISCO = "RISCO", 
+    VUNERAVEL = "VULNERAVEL",
+    BAIXO = "BAIXO",
+    SUSTENTAVEL = "SUSTENTAVEL",
+    MEDIO = "MEDIO",
+    ALTO = "ALTO"
+}

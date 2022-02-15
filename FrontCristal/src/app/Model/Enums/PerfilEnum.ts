@@ -1,0 +1,6 @@
+export enum PERFIL {
+  ADMIN = "ADMIN",
+  CANDIDATO = "CANDIDATO",
+  ALUNO = "ALUNO",
+  TUTOR = "TUTOR"
+}
