@@ -8,7 +8,6 @@
     <h2>( {{perfil}} )</h2>
     <h3>Bom Dia</h3>
   </mat-card-header>
-
   <mat-card-content>
     <h3 *ngFor="let itens of menu" (click)="(irPara(itens))">{{ itens.titulo }}</h3>
     <img *ngFor="let itens of menu" (click)="(irPara(itens))" [src]='itens.icon' alt="icon">
