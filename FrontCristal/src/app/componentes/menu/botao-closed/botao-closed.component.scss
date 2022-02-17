@@ -34,18 +34,22 @@
 }
 
 #nav-icon2 span:nth-child(even) {
-  left: 50%;
+  width: 20px;
+  height: 5px;
+  left: 60%;
   border-radius: 0 9px 9px 0;
 }
 
 #nav-icon2 span:nth-child(odd) {
-  left: 0px;
+  width: 20px;
+  height: 5px;
+  left: 20px;
   border-radius: 9px 0 0 9px;
 }
 
 #nav-icon2 span:nth-child(1),
 #nav-icon2 span:nth-child(2) {
-  top: 0px;
+  top: 8px;
 }
 
 #nav-icon2 span:nth-child(3),
@@ -55,7 +59,7 @@
 
 #nav-icon2 span:nth-child(5),
 #nav-icon2 span:nth-child(6) {
-  top: 36px;
+  top: 28px;
 }
 
 #nav-icon2.open span:nth-child(1),
@@ -75,13 +79,17 @@
 }
 
 #nav-icon2.open span:nth-child(1) {
-  left: 5px;
-  top: 7px;
+  width: 20px;
+  height: 5px;
+  left: 11px;
+  top: 13px;
 }
 
 #nav-icon2.open span:nth-child(2) {
+  width: 20px;
+  height: 5px;
   left: calc(50% - 5px);
-  top: 7px;
+  top: 13px;
 }
 
 #nav-icon2.open span:nth-child(3) {
@@ -95,11 +103,15 @@
 }
 
 #nav-icon2.open span:nth-child(5) {
-  left: 5px;
-  top: 29px;
+  width: 20px;
+  height: 5px;
+  left: 11px;
+  top: 27px;
 }
 
 #nav-icon2.open span:nth-child(6) {
+  width: 20px;
+  height: 5px;
   left: calc(50% - 5px);
-  top: 29px;
+  top: 27px;
 }

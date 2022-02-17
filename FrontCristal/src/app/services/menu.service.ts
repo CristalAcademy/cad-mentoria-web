@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Perfil } from '../Model/PerfilEnum';
-import { Menu } from '../Model/Menu.model';
+import { Menu } from '../Model/menu';
 import { environment } from 'src/environments/environment';
-
 
 @Injectable({
   providedIn: 'root',

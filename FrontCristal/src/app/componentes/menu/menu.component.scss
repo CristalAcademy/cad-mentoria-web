@@ -21,8 +21,12 @@
   background-color: rgb(3, 3, 41);
   justify-items: stretch;
   padding-right: 15px;
-  z-index: 1000;
+  z-index: 30;
+  padding: 0px 5px;
+  top: 0px;
+  padding-top: 20px;
   direction: rtl;
+  border-radius: 0px;
   .mat-card-content {
     justify-content: center;
     margin: 0px auto;
@@ -30,9 +34,9 @@
 }
 
 .mat-card.menu-open {
-  min-width: 70px;
-  max-width: 110px;
-  width: 8%;
+  min-width: 50px;
+  max-width: 100px;
+  width: 2%;
   mat-card-header {
     flex-direction: column;
   }
@@ -43,7 +47,7 @@
   }
   .logoMenu {
     flex-direction: column;
-    width: 70px;
+    width: 45px;
     justify-items: center;
     margin: 5px auto;
   }
@@ -53,7 +57,7 @@
   }
   img {
     display: block;
-    width: 40px;
+    width: 30px;
     filter: invert(99%) sepia(100%) saturate(3%) hue-rotate(38deg)
       brightness(107%) contrast(100%);
     justify-content: center;
@@ -75,7 +79,7 @@
 .mat-card.menu-open.open {
   min-width: 250px;
   max-width: 300px;
-  width: 40%;
+  width: 15%;
 
   .mat-card-header {
     display: flex;
@@ -91,11 +95,9 @@
       max-width: 100%;
     }
     .mat-card-image {
-      width: 100px;
+      width: 120px;
       height: 100px;
       margin: 0 auto;
-      border-radius: 50%;
-      border: black 4px solid;
     }
 
     h1 {
@@ -127,7 +129,7 @@
       font-size: 1.2rem;
       text-align: left;
       color: white;
-      transition: 0.6s;
+      transition: 0.4s;
       padding: 10px 0px;
       padding-left: 20px;
       margin: 0px;

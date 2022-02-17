@@ -1,3 +1,7 @@
+import { LoginModel } from './../../Model/Login.model';
+import { LoginService } from './../../services/login.service';
+import { CadastroInicialService } from './../../services/cadastro-inicial.service';
+import { RequestCadastroInicial } from './../../Model/ResquestCadastroInicial';
 import { Component, OnInit } from '@angular/core';
 import {
   Validators,
@@ -14,7 +18,12 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
   f = FormControl;
-  constructor(private formBd: FormBuilder, private router: Router) {}
+  constructor(
+    private formBd: FormBuilder,
+    private router: Router,
+    private cadastroInicialService: CadastroInicialService,
+    private loginService: LoginService
+  ) {}
 
   form!: FormGroup;
 
@@ -46,7 +55,22 @@ export class CadastroComponent implements OnInit {
   }
   onSubmit() {
     if (!this.form.invalid) {
-      this.router.navigateByUrl('/candidato');
+      let request = new RequestCadastroInicial(
+        this.form.value.email,
+        this.form.value.nome,
+        this.form.value.password
+      );
+
+      console.log(request);
+      this.cadastroInicialService
+        .cadastroInicial(request)
+        .subscribe((response) => {
+          let login = new LoginModel(request.email, request.senha);
+          this.loginService.login(login).subscribe((res) => {
+            localStorage.setItem('login', JSON.stringify(res));
+            this.router.navigateByUrl('/candidato');
+          });
+        });
     }
     console.log('Formulario está invalido ');
   }

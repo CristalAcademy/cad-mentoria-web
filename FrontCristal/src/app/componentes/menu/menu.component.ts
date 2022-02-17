@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MenuService } from './../../services/menu.service';
 import { Component, OnInit } from '@angular/core';
 import { Perfil } from 'src/app/Model/PerfilEnum';
-import { Menu } from 'src/app/Model/Menu.model';
+import { Menu } from 'src/app/Model/menu';
 
 @Component({
   selector: 'app-menu',
@@ -11,8 +11,6 @@ import { Menu } from 'src/app/Model/Menu.model';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-
-
   public perfil!: Perfil;
   public nomeUser!: string;
 
@@ -23,7 +21,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private menuService: MenuService,
     public userService: UserService,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.nomeUser = this.userService.discoveryNome();
