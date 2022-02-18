@@ -23,8 +23,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ShareModule } from './modules/share/share.module';
 import { HomeComponent } from './views/home/home.component';
 import { LoginViewComponent } from './views/login/login-view/login-view.component';
-import { TesteMenuComponent } from './componentes/teste-menu/teste-menu.component';
-
 registerLocaleData(localePT);
 
 @NgModule({
@@ -42,7 +40,6 @@ registerLocaleData(localePT);
     HomeComponent,
     DialogCronogramaComponent,
     LoginViewComponent,
-    TesteMenuComponent,
   ],
   imports: [
     BrowserModule,

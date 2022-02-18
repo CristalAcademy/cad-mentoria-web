@@ -1,20 +1,27 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer mode="side">
+
+  <mat-drawer #drawer mode="over" >
+
     <mat-card-header>
       <img class="logoMenu" matCardImage src="../../../assets/img/Icon-Perfil.svg" />
       <h1>Bem vindo {{ nomeUser }} </h1>
       <h2>( {{perfil}} )</h2>
       <h3>Bom Dia</h3>
     </mat-card-header>
+
     <mat-card-content>
       <h3 *ngFor="let itens of menu" (click)="(irPara(itens))">{{ itens.titulo }}</h3>
       <img *ngFor="let itens of menu" (click)="(irPara(itens))" [src]='itens.icon' alt="icon">
     </mat-card-content>
+
     <mat-card-actions>
       <button class="closeSession" mat-raised-button color="primary">Logout now</button>
     </mat-card-actions>
+   
+
   </mat-drawer>
-  <mat-drawer-content>
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
-  </mat-drawer-content>
+  <div>
+    <button mat-raised-button (click)="drawer.toggle()"><app-botao-closed></app-botao-closed></button>
+       </div>
+
 </mat-drawer-container>

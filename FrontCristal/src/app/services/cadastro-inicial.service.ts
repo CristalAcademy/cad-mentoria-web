@@ -1,25 +1,18 @@
-import { HttpClient } from '@angular/common/http';
-import { ResponseCandidato } from './../Model/ResponseCandidato.model';
-import { Observable } from 'rxjs';
-import { RequestCadastroInicial } from './../Model/ResquestCadastroInicial';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { ResponseCadastroIncial } from '../Model/ResponseCadastroInicial';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CadastroInicialService {
-  apiURL: string;
-  constructor(private http: HttpClient) {
-    this.apiURL = environment.path;
-  }
+  readonly api = environment.path;
 
-  cadastroInicial(
-    request: RequestCadastroInicial
-  ): Observable<ResponseCandidato> {
-    return this.http.post<ResponseCandidato>(
-      `${this.apiURL}/candidatos/step/user`,
-      request
-    );
+  constructor(private http: HttpClient) { } 
+
+  cadastrar(data: string ){
+    return this.http.post<ResponseCadastroIncial[]>(`${this.api}/candidatos/step/user`, data)
+    
   }
 }

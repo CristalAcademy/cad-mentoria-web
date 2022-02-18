@@ -1,3 +1,4 @@
+import { TesteMenuComponent } from './../../componentes/teste-menu/teste-menu.component';
 import { HeaderComponent } from './../../componentes/header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,8 +24,9 @@ import { ShareModule } from '../share/share.module';
     AlunoComponent,
     PortalViewComponent,
     HeaderComponent,
+    TesteMenuComponent
   ],
-  exports: [MenuComponent, HeaderComponent],
+  exports: [TesteMenuComponent, HeaderComponent],
   imports: [
     CommonModule,
     Material,
