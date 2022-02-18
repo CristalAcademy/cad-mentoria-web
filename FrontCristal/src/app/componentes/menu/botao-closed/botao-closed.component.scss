@@ -13,7 +13,7 @@
   transition: 0.5s ease-in-out;
   cursor: pointer;
   z-index: 99;
-  margin-right: 0;
+  margin-right:0px
 }
 
 #nav-icon2 span {
@@ -36,14 +36,14 @@
 #nav-icon2 span:nth-child(even) {
   width: 20px;
   height: 5px;
-  left: 60%;
+  left: 33%;
   border-radius: 0 9px 9px 0;
 }
 
 #nav-icon2 span:nth-child(odd) {
   width: 20px;
   height: 5px;
-  left: 20px;
+  left: 0px;
   border-radius: 9px 0 0 9px;
 }
 
