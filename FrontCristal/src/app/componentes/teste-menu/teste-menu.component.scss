@@ -91,6 +91,10 @@
       width: 70px;
       height: 100vh;
       background-color: #030329;
+      button{
+        background-color: transparent;
+        box-shadow: none;
+      }
       .logoMenu-closed{
         filter: invert(96%) sepia(100%) saturate(12%) hue-rotate(237deg)
         brightness(103%) contrast(103%);
