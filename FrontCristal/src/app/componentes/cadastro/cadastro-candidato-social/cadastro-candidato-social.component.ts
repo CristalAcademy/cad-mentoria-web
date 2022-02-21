@@ -1,3 +1,5 @@
+import { CadastroInicialService } from './../../../services/cadastro-inicial.service';
+import { RequestCadastroSocial } from './../../../Model/RequestCadastroSocial';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -16,7 +18,7 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   f = FormControl;
   minDate!: Date;
   maxDate!: Date;
-  constructor(private formBd: FormBuilder, private router: Router) {
+  constructor(private formBd: FormBuilder, private router: Router, private CadastroSocialService: CadastroSocialService ) {
     const hoje = new Date();
     const quinzena = new Date().setDate(hoje.getDate() + 15);
     this.minDate = new Date(hoje);
@@ -38,7 +40,16 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigateByUrl('/status/2');
+    if(!this.form.invalid){
+      let request = new RequestCadastroSocial(
+        this.form.value.classe,
+        this.form.value.razao,
+        this.form.value.agendar
+      );
+      console.log(request);
+      this.CadastroInicialService.ca
+
+    }
   }
   aoPular() {
     this.router.navigateByUrl('/status/1');
@@ -58,4 +69,5 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   escondeTooltip() {
     this.visible = false;
   }
+
 }

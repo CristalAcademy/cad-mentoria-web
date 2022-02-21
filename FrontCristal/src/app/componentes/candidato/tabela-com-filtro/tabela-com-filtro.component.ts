@@ -1,5 +1,5 @@
 import { FiltroCandidato } from './../../../Model/FiltroCandidato';
-import { ResponseCandidato } from './../../../Model/ResponseCandidato.model';
+import { ResponseCandidato } from '../../../Model/ResponseCandidato';
 
 import { CandidatoService } from './../../../services/candidato.service';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
