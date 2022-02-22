@@ -1,6 +1,6 @@
 import { Perfil } from "./PerfilEnum"
 
-export interface dResponseCandidato {
+export interface ResponseCandidato {
   id: number;
   nomeCompleto: string;
   email:string;

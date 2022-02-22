@@ -1,4 +1,5 @@
-import { CadastroInicialService } from './../../../services/cadastro-inicial.service';
+import { CadastroSocialService } from './../../../services/Cadastro-Social.service';
+
 import { RequestCadastroSocial } from './../../../Model/RequestCadastroSocial';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,10 @@ export class CadastroCandidatoSocialComponent implements OnInit {
   f = FormControl;
   minDate!: Date;
   maxDate!: Date;
-  constructor(private formBd: FormBuilder, private router: Router, private CadastroSocialService: CadastroSocialService ) {
+  constructor(
+    private formBd: FormBuilder,
+     private router: Router,
+     private CadastroSocialService: CadastroSocialService ) {
     const hoje = new Date();
     const quinzena = new Date().setDate(hoje.getDate() + 15);
     this.minDate = new Date(hoje);
@@ -47,7 +51,11 @@ export class CadastroCandidatoSocialComponent implements OnInit {
         this.form.value.agendar
       );
       console.log(request);
-      this.CadastroInicialService.ca
+      this.CadastroSocialService.cadastroSocial(request).subscribe(
+        (response) => {
+          this.router.navigateByUrl('/login')
+        }
+      )
 
     }
   }
