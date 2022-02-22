@@ -1,10 +1,14 @@
+import { Perfil } from './PerfilEnum';
 export class RequestCadastroSocial {
-    constructor(classe: string, entrevista:string, motivacao: string){
+    constructor(classe: Perfil,
+         entrevista:string ,
+          motivacao: string
+          ){
         this.classe = classe;
         this.entrevista = entrevista;
         this.motivacao = motivacao;
     }
-    classe!: string;
-    entrevista!: string;
+    classe!: Perfil;
+    entrevista!:string;
     motivacao!: string;
 }

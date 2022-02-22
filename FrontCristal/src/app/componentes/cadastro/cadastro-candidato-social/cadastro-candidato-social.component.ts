@@ -33,12 +33,12 @@ export class CadastroCandidatoSocialComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBd.group({
-      classe: this.formBd.control('', [Validators.required]),
       razao: this.formBd.control('', [
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(150),
       ]),
+       classe: this.formBd.control('', [Validators.required]),
       agendar: this.formBd.control('', [Validators.required]),
     });
   }
