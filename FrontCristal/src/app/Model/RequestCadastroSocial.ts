@@ -1,4 +1,5 @@
 import { Perfil } from './PerfilEnum';
+
 export class RequestCadastroSocial {
     constructor(classe: Perfil,
          entrevista:string ,
