@@ -8,7 +8,7 @@ import { Menu } from 'src/app/Model/menu';
 @Component({
   selector: 'app-teste-menu',
   templateUrl: './teste-menu.component.html',
-  styleUrls: ['./teste-menu.component.scss'],
+  styleUrls: ['./teste-menu.component.scss', './teste-menu.responsive.scss'],
 })
 export class TesteMenuComponent implements OnInit {
   public perfil!: Perfil;
