@@ -1,10 +1,10 @@
+import { BotaoMenuComponent } from 'src/app/componentes/teste-menu/botao-menu/botao-menu.component';
+import { TesteMenuComponent } from './../../componentes/teste-menu/teste-menu.component';
 import { HeaderComponent } from './../../componentes/header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdmComponent } from '../../views/adm/adm.component';
-import { MenuComponent } from '../../componentes/menu/menu.component';
 import { CandidatoComponent } from '../../componentes/candidato/candidato.component';
-import { BotaoClosedComponent } from '../../componentes/menu/botao-closed/botao-closed.component';
 import { Material } from '../../../assets/module/material.module';
 import { TabelaComFiltroComponent } from '../../componentes/candidato/tabela-com-filtro/tabela-com-filtro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,15 +16,15 @@ import { ShareModule } from '../share/share.module';
 @NgModule({
   declarations: [
     AdmComponent,
-    MenuComponent,
     CandidatoComponent,
-    BotaoClosedComponent,
     TabelaComFiltroComponent,
     AlunoComponent,
     PortalViewComponent,
     HeaderComponent,
+    TesteMenuComponent,
+    BotaoMenuComponent
   ],
-  exports: [MenuComponent, HeaderComponent],
+  exports: [TesteMenuComponent, HeaderComponent, BotaoMenuComponent,],
   imports: [
     CommonModule,
     Material,
