@@ -54,7 +54,7 @@ export class CadastroCandidatoComponent implements OnInit {
     return 'Senha deve ter ao menos de 8 caracteres';
   }
   onSubmit() {
-    if (!this.form.invalid) {
+   if (!this.form.invalid) {
       let request = new RequestCadastroComplemento(
         this.form.value.periodo,
         this.form.value.data,
@@ -66,10 +66,11 @@ export class CadastroCandidatoComponent implements OnInit {
       console.log(request);
       this.CadastroComplementoService.cadastroComplemento(request).subscribe(
         (response) => {
-          this.router.navigateByUrl('/social');
+          this.router.navigateByUrl('/social'); 
         }
       );
     }
+    this.router.navigateByUrl('/social'); 
   }
   element(key: string) {
     return this.form.get(key);
