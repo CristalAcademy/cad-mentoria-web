@@ -1,3 +1,4 @@
+
 import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import localePT from '@angular/common/locales/pt';
@@ -23,6 +24,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ShareModule } from './modules/share/share.module';
 import { HomeComponent } from './views/home/home.component';
 import { LoginViewComponent } from './views/login/login-view/login-view.component';
+
 
 registerLocaleData(localePT);
 

@@ -6,12 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
 
-  open: boolean = false;
+  constructor() { }
 
-  ngOnInit(): void {}
-  changeOpen(event: boolean) {
-    this.open = event;
+  ngOnInit(): void {
   }
+
 }

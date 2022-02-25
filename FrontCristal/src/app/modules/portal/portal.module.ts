@@ -1,3 +1,4 @@
+import { HeaderComponent } from './../../componentes/header/header.component';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AdmComponent} from "../../views/adm/adm.component";
@@ -9,6 +10,7 @@ import {TabelaComFiltroComponent} from "../../componentes/candidato/tabela-com-f
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AlunoComponent} from "../../views/aluno/aluno.component";
 import {PortalRoutingModule} from "./portal-routing.module";
+
 import {PortalViewComponent} from "../../views/portal/portal-view/portal-view.component";
 import {ShareModule} from "../share/share.module";
 
@@ -21,7 +23,8 @@ import {ShareModule} from "../share/share.module";
     BotaoClosedComponent,
     TabelaComFiltroComponent,
     AlunoComponent,
-    PortalViewComponent
+    PortalViewComponent,
+    HeaderComponent
   ],
   exports: [
     MenuComponent
