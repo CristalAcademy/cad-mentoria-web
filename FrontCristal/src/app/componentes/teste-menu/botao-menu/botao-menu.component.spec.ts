@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotaoClosedComponent } from './botao-closed.component';
+import { BotaoMenuComponent } from './botao-menu.component';
 
-describe('BotaoClosedComponent', () => {
-  let component: BotaoClosedComponent;
-  let fixture: ComponentFixture<BotaoClosedComponent>;
+describe('BotaoMenuComponent', () => {
+  let component: BotaoMenuComponent;
+  let fixture: ComponentFixture<BotaoMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BotaoClosedComponent ]
+      declarations: [ BotaoMenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BotaoClosedComponent);
+    fixture = TestBed.createComponent(BotaoMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

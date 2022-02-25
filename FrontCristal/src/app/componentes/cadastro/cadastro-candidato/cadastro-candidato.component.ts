@@ -1,3 +1,5 @@
+import { CadastroComplementoService } from './../../../services/cadastro-complemento.service';
+import { RequestCadastroComplemento } from './../../../Model/ResquestCadastroComplemento';
 import { Router } from '@angular/router';
 import { CadastroCandidatoSocialComponent } from './../cadastro-candidato-social/cadastro-candidato-social.component';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +19,11 @@ export class CadastroCandidatoComponent implements OnInit {
   f = FormControl;
   minDate!: Date;
   maxDate!: Date;
-  constructor(private formBd: FormBuilder, private router: Router) {
+  constructor(
+    private formBd: FormBuilder,
+    private router: Router,
+    private CadastroComplementoService: CadastroComplementoService
+  ) {
     const hoje = new Date();
     const maiorDeDezoito = new Date().setDate(hoje.getDate() - 6575);
     const menorDeNoventa = new Date().setDate(hoje.getDate() - 33000);
@@ -32,11 +38,11 @@ export class CadastroCandidatoComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBd.group({
       data: this.formBd.control('', [Validators.required]),
-      estuda: this.formBd.control('', [Validators.required]),
-      trabalha: this.formBd.control('', [Validators.required]),
-      conhece: this.formBd.control('', [Validators.required]),
+      estuda: this.formBd.control(false, [Validators.required]),
+      trabalha: this.formBd.control(false, [Validators.required]),
+      conhece: this.formBd.control(false, [Validators.required]),
       periodo: this.formBd.control('', [Validators.required]),
-      tempoTreino: this.formBd.control('', [Validators.required])
+      tempoTreino: this.formBd.control(0, [Validators.required]),
     });
   }
   getErrorMessage(prop: string) {
@@ -48,7 +54,23 @@ export class CadastroCandidatoComponent implements OnInit {
     return 'Senha deve ter ao menos de 8 caracteres';
   }
   onSubmit() {
-    this.router.navigateByUrl('/social');
+   if (!this.form.invalid) {
+      let request = new RequestCadastroComplemento(
+        this.form.value.periodo,
+        this.form.value.data,
+        this.form.value.estuda,
+        this.form.value.tempoTreino,
+        this.form.value.conhece,
+        this.form.value.trabalha
+      );
+      console.log(request);
+      this.CadastroComplementoService.cadastroComplemento(request).subscribe(
+        (response) => {
+          this.router.navigateByUrl('/social'); 
+        }
+      );
+    }
+    this.router.navigateByUrl('/social'); 
   }
   element(key: string) {
     return this.form.get(key);

@@ -24,8 +24,11 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ShareModule } from './modules/share/share.module';
 import { HomeComponent } from './views/home/home.component';
 import { LoginViewComponent } from './views/login/login-view/login-view.component';
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/develop
 registerLocaleData(localePT);
 
 @NgModule({
@@ -65,4 +68,4 @@ registerLocaleData(localePT);
   bootstrap: [AppComponent],
   schemas: [],
 })
-export class AppModule { }
+export class AppModule {}

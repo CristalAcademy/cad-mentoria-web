@@ -53,4 +53,9 @@ export class CadastroComponent implements OnInit {
   element(key: string) {
     return this.form.get(key);
   }
+
+  cadastrar(){
+    
+  }
+
 }

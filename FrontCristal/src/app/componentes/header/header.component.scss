@@ -1,27 +1,18 @@
 mat-card {
-  margin-bottom: 25px;
-  position: fixed;
-  width: 100%;
-  z-index: 101;
-  border-radius: 0;
   background-color: #030329;
+  margin-bottom: 5px;
   ul {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     list-style: none;
-    justify-content: end;
-    text-align: right;
-    margin: 0px 50px;
+    padding: 5px 0px;
     li {
+      margin: 2px 20px;
       color: white;
-      margin: 0px 35px;
-      font-size: 1rem;
+      list-style: none;
       font-family: Arial, Helvetica, sans-serif;
-    }
-    li:hover {
-      cursor: pointer;
-      color: rgb(224, 108, 66);
-      transition: 0.2s;
+      font-size: 1.3rem;
     }
   }
 }

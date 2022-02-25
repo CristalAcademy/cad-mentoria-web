@@ -17,7 +17,8 @@ export class AuthInterceptor implements HttpInterceptor {
     if (
       req.url != `${environment.path}/authenticate` &&
       req.url != `${environment.path}/recuperar-senha` &&
-      req.url != `${environment.path}/recuperar-senha/confirmar`
+      req.url != `${environment.path}/recuperar-senha/confirmar` &&
+      req.url != `${environment.path}/candidatos/step/user`
     ) {
       var token: {
         token: string;
