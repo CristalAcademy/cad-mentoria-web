@@ -1,16 +1,16 @@
 import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 import { MenuService } from './../../services/menu.service';
+import { Perfil } from './../../Model/PerfilEnum';
 import { Component, OnInit } from '@angular/core';
-import { Perfil } from 'src/app/Model/PerfilEnum';
 import { Menu } from 'src/app/Model/menu';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  selector: 'app-teste-menu',
+  templateUrl: './teste-menu.component.html',
+  styleUrls: ['./teste-menu.component.scss', './teste-menu.responsive.scss'],
 })
-export class MenuComponent implements OnInit {
+export class TesteMenuComponent implements OnInit {
   public perfil!: Perfil;
   public nomeUser!: string;
 

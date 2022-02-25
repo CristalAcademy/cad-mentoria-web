@@ -6,20 +6,15 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CadastroInicialService {
-  apiURL: string;
-  constructor(private http: HttpClient) {
-    this.apiURL = environment.path;
-  }
+  readonly api = environment.path;
 
-  cadastroInicial(
-    request: RequestCadastroInicial
-  ): Observable<ResponseCandidato> {
-    return this.http.post<ResponseCandidato>(
-      `${this.apiURL}/candidatos/step/user`,
-      request
-    );
+  constructor(private http: HttpClient) { } 
+
+  cadastrar(data: string ){
+    return this.http.post<ResponseCadastroIncial[]>(`${this.api}/candidatos/step/user`, data)
+    
   }
 }
