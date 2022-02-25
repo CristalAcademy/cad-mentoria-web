@@ -11,7 +11,6 @@
 
     <mat-card-content>
       <h3 *ngFor="let itens of menu" (click)="(irPara(itens))">{{ itens.titulo }}</h3>
-      <img *ngFor="let itens of menu" (click)="(irPara(itens))" [src]='itens.icon' alt="icon">
     </mat-card-content>
 
     <mat-card-actions>
@@ -23,6 +22,9 @@
   <div class="menu-closed">
     <button mat-raised-button (click)="drawer.toggle()"><app-botao-menu></app-botao-menu></button>
       <img class="logoMenu-closed"  src="../../../assets/img/Icon-Perfil.svg" />
+      <div class="imagens-menu">
+      <img class="imagens-menu-closed" *ngFor="let itens of menu" (click)="(irPara(itens))" [src]='itens.icon' alt="icon">
+    </div>
   </div>
 
 </mat-drawer-container>

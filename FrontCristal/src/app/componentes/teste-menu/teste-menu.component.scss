@@ -1,15 +1,4 @@
-::-webkit-scrollbar {
-  width: 8px;
-  height: 100%;
-}
-::-webkit-scrollbar-track {
-  background-color: rgb(3, 3, 41);
-}
-::-webkit-scrollbar-thumb {
-  background-color: rgba(30, 34, 68, 0.788);
-  border-radius: 25px;
-  border: 1.5px solid rgb(3, 3, 41);
-}
+
 .example-container {
   width: 100vw;
   height: 100vh;
@@ -17,11 +6,15 @@
   position: fixed;
   z-index: 30;
   top: 0;
+  
   mat-drawer{
-    width: 270px;
+    width: 250px;
     background-color: #02021a;
-    padding-right: 15px;
+    padding-right: 0px;
     padding-top: 20px;
+    margin-left: 5px;
+    border-radius: 15px;
+
     mat-card-header{
       display: flex;
       flex-direction: column;
@@ -30,6 +23,7 @@
       align-items: center;
       h1,h2,h3{
         font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
         font-size: 1,3rem;
         color: white
       }
@@ -81,27 +75,72 @@
       }
       .mat-card-actions::before {
         content: "";
-        width: 110%;
-        height: 1px;
+        width: 80%;
+        height: 2px;
+        border-radius: 100px;
         background-color: white;
         margin-bottom: 25px;
+        margin: 10px auto;
       }
     }
     .menu-closed{
-      width: 70px;
-      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;  
+      justify-content: center;
+      height: 70px;
       background-color: #030329;
+      border-radius: 15px;
+      position: fixed  ;
+      bottom: 0;
+      box-shadow:#000000 -2px 1px 17px 1px;
+      margin: 0 auto;
       button{
         background-color: transparent;
         box-shadow: none;
+        left:0px;
+        top: 10px;
+        position: absolute;
+
       }
       .logoMenu-closed{
+        display: none;
+      }
+      .logoMenu-closed:hover{
+        cursor: pointer;
+      }
+      .imagens-menu{
+        margin-left: 40px;
+
+      .imagens-menu-closed{
         filter: invert(96%) sepia(100%) saturate(12%) hue-rotate(237deg)
         brightness(103%) contrast(103%);
-        width: 70px;
-        height: 50px;
-        margin-top: 120px;
+        width: 30px;
+        margin: 0px 10px;
+        transition: 0.2s;
+      }
+      .imagens-menu-closed:hover{
+        cursor: pointer;
+        transform: scale(1.3, 1.3);
       }
     }
-  }
+   
+      }
+    }
+    .mat-drawer-inner-container{
+      overflow: hidden;
+    }
     
+::-webkit-scrollbar {
+  width: 8px;
+  height: 100%;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(3, 3, 41);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 34, 68, 0.788);
+  border-radius: 25px;
+  border: 2px solid rgb(3, 3, 41);
+}
