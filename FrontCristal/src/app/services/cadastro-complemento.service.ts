@@ -1,4 +1,4 @@
-import { ResponseCandidato } from './../Model/ResponseCandidato.model';
+import { ResponseCandidato } from '../Model/ResponseCandidato';
 import { Observable } from 'rxjs';
 import { RequestCadastroComplemento } from './../Model/ResquestCadastroComplemento';
 import { environment } from 'src/environments/environment';
