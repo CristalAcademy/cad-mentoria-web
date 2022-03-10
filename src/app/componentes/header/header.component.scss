@@ -1,0 +1,18 @@
+mat-card {
+  background-color: #030329;
+  margin-bottom: 5px;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 5px 0px;
+    li {
+      margin: 2px 20px;
+      color: white;
+      list-style: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.3rem;
+    }
+  }
+}
