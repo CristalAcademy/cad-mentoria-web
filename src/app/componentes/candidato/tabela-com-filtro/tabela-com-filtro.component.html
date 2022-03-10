@@ -1,0 +1,42 @@
+<div class="main">
+  <mat-form-field>
+    <mat-label>Pesquise o candidato aqui</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input />
+  </mat-form-field>
+
+  <section class="example-section" [formGroup]="filtros">
+    <h4>
+      Selecione o filtro:
+      <mat-checkbox formControlName="estudando" (change)="aoMudar()">Estudando</mat-checkbox>
+      <mat-checkbox formControlName="programando" (change)="aoMudar()">Programando</mat-checkbox>
+      <mat-checkbox formControlName="trabalhando" (change)="aoMudar()">Trabalhando</mat-checkbox>
+    </h4>
+  </section>
+
+  <div class="conteiner-table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-table">
+      <ng-container class="name" matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element">{{ element.nomeCompleto }}</td>
+      </ng-container>
+
+      <ng-container class="acao" matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef>Ação</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon class="mat-18">check</mat-icon>
+          |
+          <mat-icon class="mat-18">clear</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          Candidato "{{ input.value }}" não encontrado
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

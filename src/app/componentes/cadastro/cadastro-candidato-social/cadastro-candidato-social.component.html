@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-content>
+    <div class="form" *ngIf="form" [formGroup]="form">
+      <img class="logoMenu" src="../../../assets/img/cadastroCristal.svg" alt="Login" />
+      <h1>Cadastrar</h1>
+      <mat-form-field>
+        <mat-label>Renda Familiar</mat-label>
+        <mat-select formControlName="classe" required>
+          <mat-option value="one">Risco</mat-option>
+          <mat-option value="two">Vunerável</mat-option>
+          <mat-option value="tree">Baixo</mat-option>
+          <mat-option value="four">Sustentável</mat-option>
+          <mat-option value="four">Médio</mat-option>
+          <mat-option value="five">Alto</mat-option>
+        </mat-select>
+        <p class="term" (mouseover)="exibeTooltip()" (mouseleave)="escondeTooltip()">?</p>
+        <div class="tooltip" [class.visible]="visible">
+          <p><strong>Risco:</strong> 0 à R$1.200,00.</p>
+          <p><strong>Vunerável:</strong> R$1.200,00 à R$2.000,00 </p>
+          <p><strong>Baixo:</strong> R$2.000,00 à R$3.000,00</p>
+          <p><strong>Sustentável:</strong> R$3.000,00 à R$4.000,00</p>
+          <p><strong>Médio:</strong> R$4.000,00 à R$6.000,00 </p>
+          <p><strong>Alto:</strong> Mais de R$6.000,00 </p>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Por que você <br> precisa de mentoria?</mat-label>
+        <textarea matInput formControlName="razao" required></textarea>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Agende um bate-papo</mat-label>
+        <input matInput formControlName="agendar" [min]="minDate" [max]="maxDate" [matDatepicker]="dp3" [disabled]="true" />
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker color="primary" #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" (click)="aoPular()">Pular</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid"  (click)="onSubmit()">Proximo</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
