@@ -5,11 +5,14 @@
   </mat-form-field>
 
   <section class="example-section" [formGroup]="filtros">
+    
     <h4>
-      Selecione o filtro:
+      <button mat-button [matMenuTriggerFor]="menu">Filtro</button>
+      <mat-menu #menu="matMenu">
       <mat-checkbox formControlName="estudando" (change)="aoMudar()">Estudando</mat-checkbox>
       <mat-checkbox formControlName="programando" (change)="aoMudar()">Programando</mat-checkbox>
       <mat-checkbox formControlName="trabalhando" (change)="aoMudar()">Trabalhando</mat-checkbox>
+    </mat-menu>
     </h4>
   </section>
 
