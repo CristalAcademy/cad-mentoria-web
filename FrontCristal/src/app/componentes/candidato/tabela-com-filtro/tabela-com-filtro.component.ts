@@ -2,7 +2,7 @@ import { FiltroCandidato } from './../../../Model/FiltroCandidato';
 import { ResponseCandidato } from '../../../Model/ResponseCandidato';
 
 import { CandidatoService } from './../../../services/candidato.service';
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./tabela-com-filtro.component.scss'],
 })
 export class TabelaComFiltroComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'acao'];
+  displayedColumns: string[] = ['name', 'acao', 'view'];
 
   data!: Array<ResponseCandidato>;
   dataSource!: MatTableDataSource<ResponseCandidato>;
@@ -32,6 +32,10 @@ export class TabelaComFiltroComponent implements OnInit {
       this.data = res;
       this.dataSource = new MatTableDataSource(this.data);
     });
+  }
+  expandir(){
+    console.log();
+    alert("agora foi")
   }
 
   applyFilter(event: Event) {
