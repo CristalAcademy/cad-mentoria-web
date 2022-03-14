@@ -24,15 +24,15 @@
         <th mat-header-cell *matHeaderCellDef>Ação</th>
         <td mat-cell *matCellDef="let element">
           <mat-icon class="mat-18">check</mat-icon>
-          
+
           <mat-icon class="mat-18">clear</mat-icon>
         </td>
       </ng-container>
-      <ng-container class="view" matColumnDef="view">
+      <ng-container class="view" matColumnDef="view" >
         <th mat-header-cell *matHeaderCellDef>Visualização </th>
         <td mat-cell *matCellDef="let element" >
           <mat-icon class="mat-18" >Eyes</mat-icon>
-          <span (click)="expandir()">view</span>
+          <button (click)="expandir()" >view</button>
         </td>
       </ng-container>
 
