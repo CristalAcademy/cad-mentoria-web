@@ -1,13 +1,13 @@
 <div class="main">
+  <div class="container">
   <mat-form-field>
     <mat-label>Pesquise o candidato aqui</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
   <section class="example-section" [formGroup]="filtros">
-    
     <h4>
-      <button mat-button [matMenuTriggerFor]="menu">Filtro</button>
+      <button mat-button class="filtro" [matMenuTriggerFor]="menu">Filtro: </button>
       <mat-menu #menu="matMenu">
       <mat-checkbox formControlName="estudando" (change)="aoMudar()">Estudando</mat-checkbox>
       <mat-checkbox formControlName="programando" (change)="aoMudar()">Programando</mat-checkbox>
@@ -15,6 +15,7 @@
     </mat-menu>
     </h4>
   </section>
+  </div>
 
   <div class="conteiner-table">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-table">
