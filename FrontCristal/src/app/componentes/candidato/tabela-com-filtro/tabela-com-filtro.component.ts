@@ -1,10 +1,12 @@
+import { MatDialog } from '@angular/material/dialog';
 import { FiltroCandidato } from './../../../Model/FiltroCandidato';
 import { ResponseCandidato } from '../../../Model/ResponseCandidato';
 
 import { CandidatoService } from './../../../services/candidato.service';
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DialogCandidatoComponent } from './Dialog-Candidato/Dialog-Candidato.component';
 
 @Component({
   selector: 'app-tabela-com-filtro',
@@ -12,19 +14,31 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./tabela-com-filtro.component.scss'],
 })
 export class TabelaComFiltroComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'acao'];
+  displayedColumns: string[] = ['name', 'view', 'acao'];
 
   data!: Array<ResponseCandidato>;
   dataSource!: MatTableDataSource<ResponseCandidato>;
 
   filtros!: FormGroup;
 
-  constructor(private candidatoService: CandidatoService, fb: FormBuilder) {
+  constructor(private candidatoService: CandidatoService, fb: FormBuilder, public dialog: MatDialog) {
     this.filtros = fb.group({
       estudando: false,
       programando: false,
       trabalhando: false,
     });
+  }
+  openDialog( element: ResponseCandidato): void {
+    const dialogref =this.dialog.open(DialogCandidatoComponent,
+      {
+        data: element
+      })
+
+  
+  dialogref.afterClosed().subscribe(result  => {
+    console.log('o dialogo fechou')
+  })
+
   }
 
   ngOnInit(): void {
@@ -33,6 +47,7 @@ export class TabelaComFiltroComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.data);
     });
   }
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -6,6 +6,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 import { Material } from '../assets/module/material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -53,6 +54,7 @@ registerLocaleData(localePT);
     BrowserAnimationsModule,
     HttpClientModule,
     ShareModule,
+    CommonModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-br' },

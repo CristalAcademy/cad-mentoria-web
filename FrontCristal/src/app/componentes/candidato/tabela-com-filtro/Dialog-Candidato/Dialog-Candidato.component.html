@@ -1,0 +1,47 @@
+<div class="botaoclosed" mat-dialog-actions>
+  <button mat-button (click)="cancelar()">
+    <img src="../../../../../assets/img/closed.svg" alt="Fechar">
+  </button>
+</div>
+
+<h1 mat-dialog-title>Detalhes do Candidato</h1>
+
+<div>
+<h3>Nome:
+ <p>{{data.nomeCompleto}} </p> 
+</h3>
+  
+<h3>Email:
+<p> {{data.email}}</p>
+</h3>
+
+<h3>Nascimento: 
+  <p> {{data.dtNasc}}</p>
+</h3>
+
+
+<div *ngIf="trabalha; then setrabalha else senaotrabalha">
+</div>
+<ng-template #setrabalha>Trabalha</ng-template>
+  <ng-template #senaotrabalha>Não trabalha</ng-template>
+
+      
+    
+
+  <h3>Estuda:
+    <p> {{data.estuda}}</p>
+  </h3>
+ <h3>Programa:
+  <p> {{data.programou}}</p>
+ </h3>
+
+<p>Horas disponiveis para treinar: {{data.hrsDisponiveis}} horas</p>
+<p>Classe: {{data.classe}}</p>
+<p>Motivação: {{data.motivacao}}</p>
+<p>disponibilidade de horario: {{data.disponibilidade}}</p>
+<p>Classe: {{data.classe}}</p>
+<p>Data da entrevista: {{data.entrevista}}</p> 
+<p>id: {{data.id}}
+</p>
+
+
