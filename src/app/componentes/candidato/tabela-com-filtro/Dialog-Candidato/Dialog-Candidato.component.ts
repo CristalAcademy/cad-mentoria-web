@@ -3,7 +3,7 @@ import { Component, OnInit, Output, Input, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-Dialog-Candidato',
+  selector: 'app-dialog-candidato',
   templateUrl: './Dialog-Candidato.component.html',
   styleUrls: ['./Dialog-Candidato.component.scss']
 })
@@ -16,7 +16,7 @@ export class DialogCandidatoComponent implements OnInit {
 
 
 
-    
+
 
   cancelar(): void {
     this.dialogRef.close();

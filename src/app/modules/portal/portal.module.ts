@@ -12,6 +12,7 @@ import { AlunoComponent } from '../../views/aluno/aluno.component';
 import { PortalRoutingModule } from './portal-routing.module';
 import { PortalViewComponent } from '../../views/portal/portal-view/portal-view.component';
 import { ShareModule } from '../share/share.module';
+import {DialogCandidatoComponent} from "../../componentes/candidato/tabela-com-filtro/Dialog-Candidato/Dialog-Candidato.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ShareModule } from '../share/share.module';
     PortalViewComponent,
     HeaderComponent,
     TesteMenuComponent,
-    BotaoMenuComponent
+    BotaoMenuComponent,
+    DialogCandidatoComponent
   ],
   exports: [TesteMenuComponent, HeaderComponent, BotaoMenuComponent,],
   imports: [
