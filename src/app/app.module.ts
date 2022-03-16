@@ -1,3 +1,4 @@
+
 import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import localePT from '@angular/common/locales/pt';
@@ -5,6 +6,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 import { Material } from '../assets/module/material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ShareModule } from './modules/share/share.module';
 import { HomeComponent } from './views/home/home.component';
 import { LoginViewComponent } from './views/login/login-view/login-view.component';
+
+
 registerLocaleData(localePT);
 
 @NgModule({
@@ -50,6 +54,7 @@ registerLocaleData(localePT);
     BrowserAnimationsModule,
     HttpClientModule,
     ShareModule,
+    CommonModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-br' },

@@ -37,4 +37,5 @@ export class TesteMenuComponent implements OnInit {
   changeOpen(event: boolean) {
     this.open = event;
   }
+
 }

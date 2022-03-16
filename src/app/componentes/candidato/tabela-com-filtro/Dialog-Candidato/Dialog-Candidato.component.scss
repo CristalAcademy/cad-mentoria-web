@@ -1,0 +1,31 @@
+.botaoclosed{
+    margin: 5px;
+    text-align: right;
+    
+    button{
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0px;
+
+
+    }
+}
+h1{
+    font-size: 2.3rem;
+    margin: 20px;
+    margin-bottom: 60px;
+}
+div{
+    h3{
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: row;
+        font-weight: bold;
+        p{
+            font-size: 1.2rem;
+            margin-left: 5px;
+            font-weight: 400;
+        }
+    }
+}
