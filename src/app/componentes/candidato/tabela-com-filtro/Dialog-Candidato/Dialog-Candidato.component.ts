@@ -10,6 +10,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogCandidatoComponent implements OnInit {
 
   trabalha: boolean = false;
+  estuda: boolean = false;
+  programa: boolean = false;
+  
+  
+  
 
   constructor(  public dialogRef: MatDialogRef<DialogCandidatoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ResponseCandidato) { }
@@ -17,13 +22,23 @@ export class DialogCandidatoComponent implements OnInit {
 
 
 
-
   cancelar(): void {
     this.dialogRef.close();
   }
-
   ngOnInit() {
     this.trabalha = this.data.trabalha;
+    this.estuda = this.data.estuda;
+    this.programa = this.data.programou;
   }
+  public visible = false;
+
+  exibeTooltip() {
+    this.visible = true;
+  }
+
+  escondeTooltip() {
+    this.visible = false;
+  }
+
 
 }

@@ -47,16 +47,29 @@
     grid-column: 1/-1;
     max-height: 300px;
     overflow-y: auto;
-
+    
     table {
       width: 100%;
       grid-column: 1/-1;
+      th.mat-header-cell {
+        text-align: center !important;
+      }
       td {
         text-align: center;
+        .botao-view{
+          background-color: #eeeeee ;
+          cursor: pointer;
+          padding: 5px;
+          border-radius: 5px;
+          transition: 0.2s;
       }
-      th.mat-header-cell {
-        text-align: center;
+        .botao-view:hover{
+        background-color: #dfdfdf;
+      }
+      
+
+          
+        }
       }
     }
-  }
 }
