@@ -30,15 +30,6 @@ export class DialogCandidatoComponent implements OnInit {
     this.estuda = this.data.estuda;
     this.programa = this.data.programou;
   }
-  public visible = false;
-
-  exibeTooltip() {
-    this.visible = true;
-  }
-
-  escondeTooltip() {
-    this.visible = false;
-  }
-
+  
 
 }
