@@ -1,3 +1,4 @@
+
 export class FiltroCandidato {
   estudando: boolean;
   programando: boolean;
