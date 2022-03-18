@@ -1,47 +1,61 @@
-<div class="botaoclosed" mat-dialog-actions>
-  <button mat-button (click)="cancelar()">
-    <img src="../../../../../assets/img/closed.svg" alt="Fechar">
-  </button>
-</div>
-
-<h1 mat-dialog-title>Detalhes do Candidato</h1>
-
-<div>
-<h3>Nome:
- <p>{{data.nomeCompleto}} </p> 
-</h3>
+<div class="container">
+  <div class="botaoclosed" mat-dialog-actions>
+      <img  (click)="cancelar()" src="../../../../../assets/img/closed.svg" alt="Fechar">
+  </div>
   
-<h3>Email:
-<p> {{data.email}}</p>
-</h3>
-
-<h3>Nascimento: 
-  <p> {{data.dtNasc}}</p>
-</h3>
-
-
-<div *ngIf="trabalha; then setrabalha else senaotrabalha">
-</div>
-<ng-template #setrabalha>Trabalha</ng-template>
-  <ng-template #senaotrabalha>Não trabalha</ng-template>
-
-      
+  <h1 mat-dialog-title>Perfil: {{data.nomeCompleto}}</h1>
+  
+      <div class="Informacoes">
+          <h3>Nome:
+   <p>{{data.nomeCompleto}} </p> 
+            </h3>
     
+          <h3>Email:
+  <p> {{data.email}}</p>
+            </h3>
+  
+          <h3>Nascimento: 
+    <p> {{data.dtNasc}}</p>
+            </h3>
+  
+          <div class="atividade">
+      <div *ngIf="trabalha; then setrabalha else senaotrabalha"></div>
+        <ng-template #setrabalha><h2>Trabalha. </h2></ng-template>
+        <ng-template #senaotrabalha> <h2>Não trabalha. </h2> </ng-template>
+  
+      <div *ngIf="estuda; then seestuda else senaoestuda"></div>
+        <ng-template #seestuda><h2>Estuda. </h2></ng-template>
+        <ng-template #senaoestuda> <h2>Não Estuda. </h2> </ng-template>
+  
+      <div *ngIf="programa; then seprograma else senaoprograma"></div>
+        <ng-template #seprograma><h2>Já Programa. </h2></ng-template>
+        <ng-template #senaoprograma> <h2>Não Programa.</h2> </ng-template>
+            </div>
+  
+          <h3>Horario disponivel:
+    <p> {{data.hrsDisponiveis}} horas</p>
+            </h3>
+  
+    <div class="renda">
+      <h3>Renda Familiar: 
+        <p> {{data.classe}}</p>
+        </h3>
+      </div>
 
-  <h3>Estuda:
-    <p> {{data.estuda}}</p>
-  </h3>
- <h3>Programa:
-  <p> {{data.programou}}</p>
- </h3>
 
-<p>Horas disponiveis para treinar: {{data.hrsDisponiveis}} horas</p>
-<p>Classe: {{data.classe}}</p>
-<p>Motivação: {{data.motivacao}}</p>
-<p>disponibilidade de horario: {{data.disponibilidade}}</p>
-<p>Classe: {{data.classe}}</p>
-<p>Data da entrevista: {{data.entrevista}}</p> 
-<p>id: {{data.id}}
-</p>
+          <h3>Motivação: </h3>
+            <p> {{data.motivacao}}</p>
+  
+          <h3>Perido disponivel: 
+    <p> {{data.disponibilidade}}</p>
+            </h3>  
 
+          <h3>Data da entrevista: 
+    <p> {{data.entrevista}}</p>
+            </h3>
+  
+          <p>id candidato: {{data.id}}</p>
+  
+      </div>
+</div>
 
