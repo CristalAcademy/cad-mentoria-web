@@ -23,12 +23,10 @@
     flex-direction:row-reverse;
     justify-content: space-evenly;
   }
-  
 
   .mat-form-field {
     font-size: 14px;
     width: 50%;
-
     input{
       margin: 15px 10px;
       color: #e05928;
@@ -38,9 +36,20 @@
       color: white;
     }
   }
-  mat-checkbox,h4 {
+  mat-slide-toggle,h4 {
     color: #e05928;
     padding: 5px;
+  }
+  .pesquisa-conteiner{
+    display: flex;
+    justify-content: center;
+    .example-section{
+      .mat-button{
+        color:white;
+      }
+    }
+    }
+    
   }
 
   .conteiner-table {
@@ -72,4 +81,20 @@
         }
       }
     }
+
+::ng-deep .mat-menu-panel{
+  background-color: #e45420;
+  padding: 15px;
+}
+::ng-deep .mat-menu-item{
+  color: white;
+    height: 40px;
+}
+::ng-deep .mat-slide-toggle-content{
+  color: white;
+}
+::ng-deep .mat-form-field-infix{
+  border-top: 0 !important;
+  padding: 0 !important;
+
 }
