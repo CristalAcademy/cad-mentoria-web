@@ -1,17 +1,49 @@
 <div class="main">
+  <div class="pesquisa-conteiner">
   <mat-form-field>
     <mat-label>Pesquise o candidato aqui</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
   <section class="example-section" [formGroup]="filtros">
-    <h4>
-      Selecione o filtro:
-      <mat-checkbox formControlName="estudando" (change)="aoMudar()">Estudando</mat-checkbox>
-      <mat-checkbox formControlName="programando" (change)="aoMudar()">Programando</mat-checkbox>
-      <mat-checkbox formControlName="trabalhando" (change)="aoMudar()">Trabalhando</mat-checkbox>
-    </h4>
+    <button class="filtro-color" mat-button [matMenuTriggerFor]="animals">Selecione o filtro:</button>
+      <mat-menu #animals="matMenu">
+        <mat-slide-toggle formControlName="estudando" (change)="aoMudar()">Estudando</mat-slide-toggle>
+      <mat-slide-toggle formControlName="programando" (change)="aoMudar()">Programando</mat-slide-toggle>
+      <mat-slide-toggle formControlName="trabalhando" (change)="aoMudar()">Trabalhando</mat-slide-toggle>
+        <button mat-menu-item [matMenuTriggerFor]="HrsDisponiveis">Horas Disponiveis</button>
+          <button mat-menu-item [matMenuTriggerFor]="Classe">Classe Social</button>
+          <button mat-menu-item [matMenuTriggerFor]="status">Perfil Atual</button>
+      
+    </mat-menu>
+    <mat-menu #HrsDisponiveis="matMenu">
+      <button mat-menu-item>2 Horas</button>
+      <button mat-menu-item>4 Horas</button>
+      <button mat-menu-item>6 Horas</button>
+      <button mat-menu-item>8 Horas</button>
+    </mat-menu>
+    
+    <mat-menu #Classe="matMenu">
+      <button mat-menu-item>Risco</button>
+      <button mat-menu-item>Vulnerável</button>
+      <button mat-menu-item>Baixo</button>
+      <button mat-menu-item>Sustentável</button>
+      <button mat-menu-item>Médio</button>
+      <button mat-menu-item>Alto</button>
+    </mat-menu>
+    
+    <mat-menu  #status="matMenu">
+      <button mat-menu-item>Inicial</button>
+      <button mat-menu-item>Cadastro Complementar</button>
+      <button mat-menu-item>Cadastro Social</button>
+      <button mat-menu-item>Prova Logica</button>
+      <button mat-menu-item>Entrevista</button>
+      <button mat-menu-item>Aguardando</button>
+      <button mat-menu-item>Aprovado</button>
+      <button mat-menu-item>Reprovado</button>
+    </mat-menu>
   </section>
+</div>
 
   <div class="conteiner-table">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-table">
@@ -49,4 +81,4 @@
       </tr>
     </table>
   </div>
-</div>
+  </div>
