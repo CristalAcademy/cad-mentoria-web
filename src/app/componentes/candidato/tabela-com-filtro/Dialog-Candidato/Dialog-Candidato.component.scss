@@ -1,31 +1,97 @@
-.botaoclosed{
-    margin: 5px;
-    text-align: right;
-    
-    button{
-        border: 0;
-        background-color: transparent;
+.container{
+
+    .botaoclosed{
+        margin: 5px;
+        text-align: right;
         cursor: pointer;
-        padding: 0px;
-
-
+        top: 0px;
+        img{
+            width: 35px;
+        }
     }
-}
-h1{
-    font-size: 2.3rem;
-    margin: 20px;
-    margin-bottom: 60px;
-}
-div{
-    h3{
-        font-size: 1.3rem;
-        display: flex;
-        flex-direction: row;
-        font-weight: bold;
+    h1{
+        color: rgb(228, 136, 99);
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 500;
+        margin: 20px;
+        margin-bottom: 50px;
+        margin-top: 0;
+    }
+   
+        .renda{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+              
+        }
+
         p{
-            font-size: 1.2rem;
-            margin-left: 5px;
-            font-weight: 400;
+            margin-left: 20px;
+            color: rgb(90, 90, 90);
+
+        }
+        h3{
+            color: #ff5722;
+            font-size: 1.3rem;
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            margin: 5px;
+            p{
+                margin-left: 8px;
+                color: rgb(73, 73, 73);
+                font-size: 1.2rem;
+                margin-left: 5px;
+                font-weight: 400;
+            }
+        
+    }
+    .atividade{
+        display:flex;
+        flex-direction: row;
+        h2{
+            margin: 10px 5px;
+            color: rgb(131, 131, 131);
         }
     }
 }
+::ng-deep .mat-dialog-container{
+    max-height: 650px;
+    padding: 20px;
+}
+::ng-deep .mat-dialog-actions{
+    flex-direction: row-reverse;
+    padding: 0;
+}
+
+@media (max-width: 500px){
+    .atividade{
+        flex-direction: column !important;
+        h2{
+        margin: 5px 5px !important;
+        }
+    }
+}
+@media (max-width: 425px){
+    div{
+        h3{
+        flex-direction: column !important;
+        font-size: 1.1rem !important;
+        }
+        p{
+            font-size: 1rem !important;
+        }
+        h2{
+            font-size: 1rem !important;
+            margin: 2px 5ps !important;
+        }
+        
+    }
+    h1{
+        font-size: 2rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    }
+    
